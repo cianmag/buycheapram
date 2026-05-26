@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BuyCheapRAM — Compare Cheap DDR5, DDR4 & Server RAM by $/GB</title>
+<meta name="description" content="BuyCheapRAM helps you find cheap RAM deals by comparing DDR5, DDR4, laptop, desktop, ECC, and server memory by price per GB, speed, capacity, and latency.">
+<meta name="keywords" content="cheap RAM, buy cheap RAM, DDR5 RAM deals, DDR4 RAM deals, laptop RAM, desktop RAM, server memory, ECC RAM, RAM price comparison, memory price per GB">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="BuyCheapRAM">
+<link rel="canonical" href="https://buycheapram.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://buycheapram.com/">
+<meta property="og:site_name" content="BuyCheapRAM">
+<meta property="og:title" content="BuyCheapRAM — Find Cheap DDR5, DDR4, Laptop & Server RAM">
+<meta property="og:description" content="Compare RAM deals by $/GB, speed, capacity, form factor, ECC support, and latency. Find the best-value memory upgrades fast.">
+<meta property="og:image" content="https://buycheapram.com/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="BuyCheapRAM — Compare Cheap RAM by $/GB">
+<meta name="twitter:description" content="Daily RAM price comparison for DDR5, DDR4, laptop, desktop, ECC, and server memory.">
+<meta name="twitter:image" content="https://buycheapram.com/og-image.svg">
+<meta name="theme-color" content="#0f1117">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "BuyCheapRAM",
+  "url": "https://buycheapram.com/",
+  "description": "RAM price comparison for DDR5, DDR4, laptop, desktop, ECC, and server memory sorted by price per GB.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://buycheapram.com/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"How does BuyCheapRAM rank memory deals?","acceptedAnswer":{"@type":"Answer","text":"BuyCheapRAM ranks RAM listings primarily by price per GB, then lets you filter by DDR type, capacity, speed, form factor, ECC support, and latency."}},
+    {"@type":"Question","name":"Can I compare DDR5 and DDR4 RAM prices?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use the DDR type filter to compare DDR5, DDR4, and older memory listings, or leave it on All to find the cheapest RAM across categories."}},
+    {"@type":"Question","name":"Does BuyCheapRAM include laptop and server memory?","acceptedAnswer":{"@type":"Answer","text":"Yes. BuyCheapRAM includes desktop DIMM, laptop SO-DIMM, server RDIMM, UDIMM, and ECC memory when available in the data feed."}}
+  ]
+}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,sans-serif;font-size:13px;background:#0f1117;color:#e1e4e8;min-height:100vh}
+a{color:#58a6ff;text-decoration:none}
+a:hover{text-decoration:underline}
+/* Header */
+#header{background:#161b22;border-bottom:1px solid #30363d;padding:16px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+#header h1{font-size:20px;font-weight:700;margin:0;background:linear-gradient(135deg,#58a6ff,#bc8cff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+#header .tagline{color:#8b949e;font-size:12px;margin-left:4px;-webkit-text-fill-color:#8b949e}
+#header .stats{display:flex;gap:16px;margin-left:auto;font-size:12px}
+#header .stats span{color:#8b949e}
+#header .stats strong{color:#e1e4e8}
+#last-update{color:#484f58;font-size:10px;margin-left:12px}
+/* Filters */
+#filters{background:#161b22;padding:12px 20px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;border-bottom:1px solid #30363d;position:sticky;top:0;z-index:100}
+.filter-group{display:flex;align-items:center;gap:6px}
+.filter-group label{color:#8b949e;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.filter-group select,.filter-group input{background:#0d1117;color:#e1e4e8;border:1px solid #30363d;border-radius:6px;padding:4px 8px;font-size:12px;outline:none}
+.filter-group select:focus,.filter-group input:focus{border-color:#58a6ff}
+.filter-group input{width:60px}
+.btn{border:1px solid #30363d;border-radius:6px;padding:4px 12px;font-size:12px;cursor:pointer;color:#c9d1d9;background:#21262d;transition:.15s}
+.btn:hover{background:#30363d;border-color:#8b949e}
+.btn.active{background:#1f6feb;border-color:#1f6feb;color:#fff}
+.search-wrap{position:relative}
+.search-wrap input{padding-left:24px;width:180px}
+.search-wrap::before{content:'🔍';position:absolute;left:6px;top:4px;font-size:10px;opacity:.5}
+/* Table */
+#table-wrap{overflow-x:auto;padding:0}
+table{width:100%;border-collapse:collapse;font-size:12px}
+thead th{background:#1c2128;color:#8b949e;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.5px;padding:8px 10px;text-align:right;border-bottom:2px solid #30363d;cursor:pointer;white-space:nowrap;user-select:none;position:sticky;top:0;z-index:10}
+thead th:first-child{text-align:left;padding-left:20px}
+thead th:last-child{text-align:center;padding-right:20px}
+thead th .sort-arrow{display:inline-block;margin-left:4px;color:#484f58;font-size:9px}
+thead th.sort-asc .sort-arrow{color:#58a6ff}
+thead th.sort-desc .sort-arrow{color:#58a6ff}
+tbody tr{border-bottom:1px solid #21262d;transition:.1s}
+tbody tr:hover{background:#1c2128}
+td{padding:6px 10px;vertical-align:middle;text-align:right;white-space:nowrap}
+td:first-child{text-align:left;padding-left:20px;white-space:normal;word-break:break-word}
+td:last-child{text-align:center;padding-right:20px}
+/* Colored badges */
+.badge{display:inline-block;padding:1px 8px;border-radius:10px;font-size:10px;font-weight:600}
+.badge-ddr5{background:#0d3a1e;color:#3fb950}
+.badge-ddr4{background:#1c2e4a;color:#58a6ff}
+.badge-ddr3{background:#3d1c0d;color:#f0883e}
+.badge-ecc{background:#3d1c4a;color:#d2a8ff}
+.badge-so{background:#1c3d3d;color:#56d4dd}
+.badge-rgb{background:#4a1c3d;color:#ff7be5}
+.best-value{background:linear-gradient(135deg,#1a3a2a,#0d3a1e);padding:2px 8px;border-radius:4px;font-weight:700;color:#3fb950;font-size:11px}
+/* Price per GB emphasis */
+.ppgb{font-weight:700;font-size:13px;color:#f0f6fc}
+.ppgb-good{color:#3fb950}
+.ppgb-ok{color:#d29922}
+.ppgb-meh{color:#f0883e}
+.ppgb-bad{color:#f85149}
+/* Capacity */
+.cap{font-weight:600}
+/* Speed */
+.speed{color:#8b949e}
+/* Empty state */
+#empty{display:none;text-align:center;padding:60px 20px;color:#484f58}
+#empty.show{display:block}
+/* Made with love */
+#footer{text-align:center;padding:20px;color:#484f58;font-size:11px;border-top:1px solid #21262d;margin-top:20px}
+
+.hero{padding:28px 20px 18px;background:radial-gradient(circle at top left,rgba(88,166,255,.16),transparent 36%),#0f1117;border-bottom:1px solid #21262d}
+.hero h2{font-size:26px;line-height:1.2;margin-bottom:8px;color:#f0f6fc}
+.hero p{max-width:860px;color:#8b949e;font-size:14px;line-height:1.55}
+.hero .seo-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.hero .seo-links a{border:1px solid #30363d;background:#161b22;border-radius:999px;padding:5px 10px;font-size:12px;color:#c9d1d9}
+.hero .seo-links a:hover{border-color:#58a6ff;text-decoration:none;color:#58a6ff}
+.content-section{padding:24px 20px;max-width:1100px;margin:0 auto;color:#c9d1d9;line-height:1.65}
+.content-section h2{font-size:20px;margin:0 0 10px;color:#f0f6fc}
+.content-section h3{font-size:15px;margin:18px 0 6px;color:#e1e4e8}
+.content-section p,.content-section li{color:#8b949e;font-size:13px}
+.content-section ul{padding-left:20px;margin:8px 0 0}
+.faq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:12px}
+.faq-card{border:1px solid #21262d;background:#161b22;border-radius:10px;padding:14px}
+.faq-card h3{margin-top:0;color:#f0f6fc}
+
+/* Responsive table: cards on mobile */
+@media(max-width:768px){
+  #header .stats{width:100%;margin-left:0;margin-top:6px}
+  #filters{gap:8px;padding:10px 12px}
+  .search-wrap input{width:120px}
+  #header h1{font-size:16px}
+  thead th,td{padding:4px 6px;font-size:11px}
+  td:first-child{padding-left:10px}
+  thead th:first-child{padding-left:10px}
+}
+@media(max-width:500px){
+  table,thead,tbody,th,td,tr{display:block}
+  thead{display:none}
+  td{display:grid;grid-template-columns:1fr 1fr;text-align:left;padding:2px 10px;border:none;font-size:11px}
+  td:first-child{grid-column:1/-1;padding:6px 10px;font-weight:600;font-size:12px;background:#161b22;border-radius:4px 4px 0 0;margin-top:4px}
+  td::before{content:attr(data-label);color:#8b949e;font-size:10px;text-transform:uppercase;letter-spacing:.5px}
+  td:last-child{grid-column:1/-1;text-align:center;padding:4px;background:#161b22;border-radius:0 0 4px 4px;margin-bottom:4px;border-bottom:1px solid #21262d}
+  td .badge{display:inline}
+}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div>
+    <h1>BuyCheapRAM <span class="tagline">— cheap RAM ranked by $/GB</span></h1>
+    <span id="last-update">Loading…</span>
+  </div>
+  <div class="stats" aria-label="Current RAM deal statistics">
+    <span>Listings: <strong id="stat-count">0</strong></span>
+    <span>Best $/GB: <strong id="stat-best">—</strong></span>
+  </div>
+</header>
+
+<section class="hero" aria-labelledby="hero-title">
+  <h2 id="hero-title">Find cheap RAM deals without opening 40 tabs.</h2>
+  <p>BuyCheapRAM compares memory upgrades by price per GB, capacity, speed, DDR generation, form factor, ECC support, and latency. Use it to spot cheap DDR5 RAM, DDR4 desktop RAM, laptop SO-DIMM memory, and server ECC RAM deals fast.</p>
+  <nav class="seo-links" aria-label="Popular RAM deal searches">
+    <a href="#filters">Cheap DDR5 RAM</a>
+    <a href="#filters">Cheap DDR4 RAM</a>
+    <a href="#filters">Laptop RAM deals</a>
+    <a href="#filters">Server ECC memory</a>
+    <a href="#filters">Best price per GB</a>
+  </nav>
+</section>
+
+<main>
+<div id="filters" aria-label="RAM deal filters">
+  <div class="filter-group">
+    <label>Type</label>
+    <select id="filter-ddr">
+      <option value="">All</option>
+      <option value="DDR5">DDR5</option>
+      <option value="DDR4">DDR4</option>
+      <option value="DDR3">DDR3</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <label>Form</label>
+    <select id="filter-form">
+      <option value="">All</option>
+      <option value="DIMM">DIMM (Desktop)</option>
+      <option value="SO-DIMM">SO-DIMM (Laptop)</option>
+      <option value="RDIMM">RDIMM (Server)</option>
+      <option value="UDIMM">UDIMM</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <label>ECC</label>
+    <select id="filter-ecc">
+      <option value="">All</option>
+      <option value="no">Non-ECC</option>
+      <option value="yes">ECC</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <label>Speed</label>
+    <select id="filter-speed">
+      <option value="">All</option>
+      <option value="0-2666">≤ 2666 MHz</option>
+      <option value="2666-3200">2667–3200</option>
+      <option value="3200-4800">3201–4800</option>
+      <option value="4800-6000">4801–6000</option>
+      <option value="6000-8000">6001–8000</option>
+      <option value="8000">8000+</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <label>GB</label>
+    <select id="filter-cap">
+      <option value="">All</option>
+      <option value="0-8">≤ 8GB</option>
+      <option value="8-16">8–16</option>
+      <option value="16-32">16–32</option>
+      <option value="32-64">32–64</option>
+      <option value="64-128">64–128</option>
+      <option value="128">128+</option>
+    </select>
+  </div>
+  <div class="filter-group search-wrap">
+    <input type="text" id="filter-search" placeholder="Search…">
+  </div>
+  <div class="filter-group">
+    <button class="btn active" id="sort-ppgb" data-sort="ppgb">$/GB</button>
+    <button class="btn" id="sort-price" data-sort="price">Price</button>
+    <button class="btn" id="sort-speed" data-sort="speed">Speed</button>
+  </div>
+</div>
+
+<section id="table-wrap" aria-label="RAM price comparison table">
+  <p style="text-align:center;color:#484f58;font-size:11px;margin-bottom:10px">Some links may be affiliate links. We may earn a commission at no extra cost to you. <a href="/affiliate-disclosure.html" style="color:#58a6ff">Learn more</a></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th data-col="ppgb">$/GB <span class="sort-arrow">▲</span></th>
+        <th data-col="price">Price <span class="sort-arrow">▲</span></th>
+        <th data-col="cap">Capacity <span class="sort-arrow">▲</span></th>
+        <th>Speed</th>
+        <th>Type</th>
+        <th>Form</th>
+        <th>ECC</th>
+        <th>CL</th>
+        <th>Buy</th>
+      </tr>
+    </thead>
+    <tbody id="table-body"></tbody>
+  </table>
+</section>
+
+<div id="empty" class="show">
+  <p style="font-size:24px;margin-bottom:12px">🔍</p>
+  <p>No results match your filters.</p>
+  <p style="color:#484f58;font-size:12px;margin-top:4px">Try adjusting the criteria above.</p>
+</div>
+
+<section class="content-section" aria-labelledby="guide-title">
+  <h2 id="guide-title">How to buy cheap RAM the smart way</h2>
+  <p>The cheapest memory kit is not always the best upgrade. Start with price per GB, then check compatibility: DDR5 vs DDR4, desktop DIMM vs laptop SO-DIMM, maximum supported capacity, speed support, and whether your workstation or server needs ECC RAM.</p>
+  <ul>
+    <li><strong>Gaming PCs:</strong> DDR5 6000 CL30/CL32 is often the sweet spot for modern AMD and Intel builds.</li>
+    <li><strong>Budget upgrades:</strong> DDR4 3200 or 3600 kits can still be excellent value for older desktops.</li>
+    <li><strong>Laptops:</strong> filter for SO-DIMM and match your laptop's supported DDR generation.</li>
+    <li><strong>Servers/workstations:</strong> check ECC, RDIMM/UDIMM support, and motherboard compatibility before buying.</li>
+  </ul>
+</section>
+
+<section class="content-section" aria-labelledby="faq-title">
+  <h2 id="faq-title">BuyCheapRAM FAQ</h2>
+  <div class="faq-grid">
+    <article class="faq-card">
+      <h3>How are RAM deals ranked?</h3>
+      <p>Listings are sorted by price per GB by default, so high-capacity kits with strong value rise to the top.</p>
+    </article>
+    <article class="faq-card">
+      <h3>Can I find DDR5 and DDR4 deals?</h3>
+      <p>Yes. Filter by DDR type to compare cheap DDR5 RAM, DDR4 RAM, and older memory listings.</p>
+    </article>
+    <article class="faq-card">
+      <h3>Does cheap RAM mean bad RAM?</h3>
+      <p>No. Cheap RAM can be a great buy if the DDR type, capacity, speed, latency, and form factor match your system.</p>
+    </article>
+  </div>
+</section>
+</main>
+
+<footer id="footer">
+  <p>BuyCheapRAM compares RAM prices from retailer data feeds. Data updated daily where available. Prices may vary. Some links may be affiliate links.</p>
+  <nav style="margin-top:8px">
+    <a href="/privacy-policy.html" style="color:#58a6ff;margin:0 8px;font-size:11px">Privacy Policy</a>
+    <a href="/terms-of-service.html" style="color:#58a6ff;margin:0 8px;font-size:11px">Terms of Service</a>
+    <a href="/affiliate-disclosure.html" style="color:#58a6ff;margin:0 8px;font-size:11px">Affiliate Disclosure</a>
+    <a href="/disclaimer.html" style="color:#58a6ff;margin:0 8px;font-size:11px">Disclaimer</a>
+  </nav>
+  <p style="margin-top:6px">&copy; 2026 BuyCheapRAM. All rights reserved.</p>
+</footer>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#161b22;border-top:1px solid #30363d;padding:16px 24px;z-index:9999;font-size:13px;color:#c9d1d9;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+    <span>We use cookies for analytics to improve BuyCheapRAM. No personal data is sold. By continuing, you agree to our <a href="/privacy-policy.html" style="color:#58a6ff">Privacy Policy</a>.</span>
+    <div style="display:flex;gap:8px">
+      <button onclick="acceptCookies()" style="background:#238636;color:#fff;border:none;padding:8px 20px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600">Accept</button>
+      <button onclick="declineCookies()" style="background:#21262d;color:#c9d1d9;border:1px solid #30363d;padding:8px 20px;border-radius:6px;cursor:pointer;font-size:13px">Decline</button>
+    </div>
+  </div>
+</div>
+<script>
+// Cookie consent
+(function(){
+  var consent = localStorage.getItem('cookie_consent');
+  if(!consent) document.getElementById('cookie-banner').style.display='block';
+})();
+function acceptCookies(){
+  localStorage.setItem('cookie_consent','accepted');
+  document.getElementById('cookie-banner').style.display='none';
+}
+function declineCookies(){
+  localStorage.setItem('cookie_consent','declined');
+  document.getElementById('cookie-banner').style.display='none';
+}
+</script>
+
+<script>
+// ─── Data ──────────────────────────────────────────────────────────────
+let allProducts = [];
+let currentSort = { col: 'ppgb', dir: 'asc' };
+
+async function loadData() {
+  try {
+    const resp = await fetch('data/ram_prices.json');
+    const json = await resp.json();
+    allProducts = json.products || [];
+    document.getElementById('last-update').textContent = 'Updated ' + (json.scraped_at || 'today').slice(0,10);
+    render();
+  } catch(e) {
+    document.getElementById('last-update').textContent = 'Data loading error — showing sample BuyCheapRAM listings';
+    loadSampleData();
+  }
+}
+
+function loadSampleData() {
+  // Fallback sample data so the site works without the scraper
+  allProducts = [
+    {title:"Corsair Vengeance DDR5 32GB (2x16GB) 6400MHz CL32",price:109.99,capacity_gb:32,speed_mhz:6400,ddr_type:"DDR5",form_factor:"DIMM",ecc:false,cas_latency:32,brand:"Corsair",rgb:false,kit_count:2,url:"#",asin:"SAMPLE01",price_per_gb:109.99/32},
+    {title:"G.Skill Trident Z5 Neo DDR5 32GB (2x16GB) 6000MHz CL30",price:104.99,capacity_gb:32,speed_mhz:6000,ddr_type:"DDR5",form_factor:"DIMM",ecc:false,cas_latency:30,brand:"G.Skill",rgb:true,kit_count:2,url:"#",asin:"SAMPLE02",price_per_gb:104.99/32},
+    {title:"Kingston Fury Beast DDR5 32GB (2x16GB) 5600MHz CL36",price:94.99,capacity_gb:32,speed_mhz:5600,ddr_type:"DDR5",form_factor:"DIMM",ecc:false,cas_latency:36,brand:"Kingston",rgb:false,kit_count:2,url:"#",asin:"SAMPLE03",price_per_gb:94.99/32},
+    {title:"TeamGroup T-Create Expert DDR5 64GB (2x32GB) 6000MHz CL34",price:179.99,capacity_gb:64,speed_mhz:6000,ddr_type:"DDR5",form_factor:"DIMM",ecc:false,cas_latency:34,brand:"TeamGroup",rgb:false,kit_count:2,url:"#",asin:"SAMPLE04",price_per_gb:179.99/64},
+    {title:"Corsair Vengeance DDR4 32GB (2x16GB) 3200MHz CL16",price:59.99,capacity_gb:32,speed_mhz:3200,ddr_type:"DDR4",form_factor:"DIMM",ecc:false,cas_latency:16,brand:"Corsair",rgb:false,kit_count:2,url:"#",asin:"SAMPLE05",price_per_gb:59.99/32},
+    {title:"G.Skill Ripjaws V DDR4 32GB (2x16GB) 3600MHz CL16",price:64.99,capacity_gb:32,speed_mhz:3600,ddr_type:"DDR4",form_factor:"DIMM",ecc:false,cas_latency:16,brand:"G.Skill",rgb:false,kit_count:2,url:"#",asin:"SAMPLE06",price_per_gb:64.99/32},
+    {title:"Crucial Pro DDR4 32GB (2x16GB) 3200MHz CL22",price:49.99,capacity_gb:32,speed_mhz:3200,ddr_type:"DDR4",form_factor:"DIMM",ecc:false,cas_latency:22,brand:"Crucial",rgb:false,kit_count:2,url:"#",asin:"SAMPLE07",price_per_gb:49.99/32},
+    {title:"Samsung DDR5 32GB 2Rx8 PC5-38400 4800MHz RDIMM ECC Server",price:89.99,capacity_gb:32,speed_mhz:4800,ddr_type:"DDR5",form_factor:"RDIMM",ecc:true,cas_latency:40,brand:"Samsung",rgb:false,kit_count:1,url:"#",asin:"SAMPLE08",price_per_gb:89.99/32},
+    {title:"SK Hynix DDR5 64GB (2x32GB) 4800MHz SO-DIMM Laptop RAM",price:159.99,capacity_gb:64,speed_mhz:4800,ddr_type:"DDR5",form_factor:"SO-DIMM",ecc:false,cas_latency:34,brand:"SK Hynix",rgb:false,kit_count:2,url:"#",asin:"SAMPLE09",price_per_gb:159.99/64},
+    {title:"Corsair Vengeance DDR5 64GB (2x32GB) 5200MHz CL40",price:179.99,capacity_gb:64,speed_mhz:5200,ddr_type:"DDR5",form_factor:"DIMM",ecc:false,cas_latency:40,brand:"Corsair",rgb:false,kit_count:2,url:"#",asin:"SAMPLE10",price_per_gb:179.99/64},
+    {title:"G.Skill Trident Z5 RGB DDR5 48GB (2x24GB) 7200MHz CL34",price:164.99,capacity_gb:48,speed_mhz:7200,ddr_type:"DDR5",form_factor:"DIMM",ecc:false,cas_latency:34,brand:"G.Skill",rgb:true,kit_count:2,url:"#",asin:"SAMPLE11",price_per_gb:164.99/48},
+    {title:"Crucial Pro DDR5 32GB 5600MHz SO-DIMM Laptop RAM",price:79.99,capacity_gb:32,speed_mhz:5600,ddr_type:"DDR5",form_factor:"SO-DIMM",ecc:false,cas_latency:46,brand:"Crucial",rgb:false,kit_count:1,url:"#",asin:"SAMPLE12",price_per_gb:79.99/32},
+    {title:"Kingston FURY Impact DDR4 32GB (2x16GB) 3200MHz SO-DIMM",price:69.99,capacity_gb:32,speed_mhz:3200,ddr_type:"DDR4",form_factor:"SO-DIMM",ecc:false,cas_latency:20,brand:"Kingston",rgb:false,kit_count:2,url:"#",asin:"SAMPLE13",price_per_gb:69.99/32},
+    {title:"Samsung DDR4 16GB 2Rx8 PC4-3200AA RDIMM ECC Server",price:34.99,capacity_gb:16,speed_mhz:3200,ddr_type:"DDR4",form_factor:"RDIMM",ecc:true,cas_latency:22,brand:"Samsung",rgb:false,kit_count:1,url:"#",asin:"SAMPLE14",price_per_gb:34.99/16},
+    {title:"Micron DDR5 128GB (2x64GB) 4800MHz RDIMM ECC Server",price:349.99,capacity_gb:128,speed_mhz:4800,ddr_type:"DDR5",form_factor:"RDIMM",ecc:true,cas_latency:40,brand:"Micron",rgb:false,kit_count:2,url:"#",asin:"SAMPLE15",price_per_gb:349.99/128},
+    {title:"Corsair Dominator Titanium DDR5 32GB (2x16GB) 6600MHz CL32",price:139.99,capacity_gb:32,speed_mhz:6600,ddr_type:"DDR5",form_factor:"DIMM",ecc:false,cas_latency:32,brand:"Corsair",rgb:true,kit_count:2,url:"#",asin:"SAMPLE16",price_per_gb:139.99/32},
+    {title:"TeamGroup T-Force Delta RGB DDR5 32GB (2x16GB) 6000MHz CL30",price:97.99,capacity_gb:32,speed_mhz:6000,ddr_type:"DDR5",form_factor:"DIMM",ecc:false,cas_latency:30,brand:"TeamGroup",rgb:true,kit_count:2,url:"#",asin:"SAMPLE17",price_per_gb:97.99/32},
+    {title:"ADATA XPG LANCER DDR5 32GB (2x16GB) 6000MHz CL30",price:94.99,capacity_gb:32,speed_mhz:6000,ddr_type:"DDR5",form_factor:"DIMM",ecc:false,cas_latency:30,brand:"XPG (ADATA)",rgb:true,kit_count:2,url:"#",asin:"SAMPLE18",price_per_gb:94.99/32},
+    {title:"Patriot Viper Steel DDR4 32GB (2x16GB) 3200MHz CL16",price:54.99,capacity_gb:32,speed_mhz:3200,ddr_type:"DDR4",form_factor:"DIMM",ecc:false,cas_latency:16,brand:"Patriot",rgb:false,kit_count:2,url:"#",asin:"SAMPLE19",price_per_gb:54.99/32},
+    {title:"G.Skill Trident Z Royal DDR4 32GB (2x16GB) 3600MHz CL16",price:89.99,capacity_gb:32,speed_mhz:3600,ddr_type:"DDR4",form_factor:"DIMM",ecc:false,cas_latency:16,brand:"G.Skill",rgb:true,kit_count:2,url:"#",asin:"SAMPLE20",price_per_gb:89.99/32},
+    {title:"Corsair Vengeance DDR5 96GB (2x48GB) 6400MHz CL32",price:329.99,capacity_gb:96,speed_mhz:6400,ddr_type:"DDR5",form_factor:"DIMM",ecc:false,cas_latency:32,brand:"Corsair",rgb:false,kit_count:2,url:"#",asin:"SAMPLE21",price_per_gb:329.99/96},
+    {title:"Kingston FURY Renegade DDR5 32GB (2x16GB) 7200MHz CL34",price:124.99,capacity_gb:32,speed_mhz:7200,ddr_type:"DDR5",form_factor:"DIMM",ecc:false,cas_latency:34,brand:"Kingston",rgb:true,kit_count:2,url:"#",asin:"SAMPLE22",price_per_gb:124.99/32},
+    {title:"Crucial DDR5 16GB 4800MHz SO-DIMM Laptop RAM",price:42.99,capacity_gb:16,speed_mhz:4800,ddr_type:"DDR5",form_factor:"SO-DIMM",ecc:false,cas_latency:40,brand:"Crucial",rgb:false,kit_count:1,url:"#",asin:"SAMPLE23",price_per_gb:42.99/16},
+    {title:"Samsung DDR5 64GB (2x32GB) 5600MHz SO-DIMM Laptop RAM",price:169.99,capacity_gb:64,speed_mhz:5600,ddr_type:"DDR5",form_factor:"SO-DIMM",ecc:false,cas_latency:46,brand:"Samsung",rgb:false,kit_count:2,url:"#",asin:"SAMPLE24",price_per_gb:169.99/64},
+    {title:"TeamGroup Elite DDR4 8GB 3200MHz CL22",price:14.99,capacity_gb:8,speed_mhz:3200,ddr_type:"DDR4",form_factor:"DIMM",ecc:false,cas_latency:22,brand:"TeamGroup",rgb:false,kit_count:1,url:"#",asin:"SAMPLE25",price_per_gb:14.99/8},
+    {title:"Corsair Vengeance LPX DDR4 16GB (2x8GB) 3200MHz CL16",price:34.99,capacity_gb:16,speed_mhz:3200,ddr_type:"DDR4",form_factor:"DIMM",ecc:false,cas_latency:16,brand:"Corsair",rgb:false,kit_count:2,url:"#",asin:"SAMPLE26",price_per_gb:34.99/16},
+    {title:"Samsung DDR4 32GB 2Rx4 PC4-3200AA RDIMM ECC Server",price:69.99,capacity_gb:32,speed_mhz:3200,ddr_type:"DDR4",form_factor:"RDIMM",ecc:true,cas_latency:22,brand:"Samsung",rgb:false,kit_count:1,url:"#",asin:"SAMPLE27",price_per_gb:69.99/32},
+    {title:"G.Skill Trident Z5 RGB DDR5 64GB (2x32GB) 6000MHz CL30",price:199.99,capacity_gb:64,speed_mhz:6000,ddr_type:"DDR5",form_factor:"DIMM",ecc:false,cas_latency:30,brand:"G.Skill",rgb:true,kit_count:2,url:"#",asin:"SAMPLE28",price_per_gb:199.99/64},
+    {title:"Corsair Vengeance DDR4 64GB (2x32GB) 3200MHz CL22",price:109.99,capacity_gb:64,speed_mhz:3200,ddr_type:"DDR4",form_factor:"DIMM",ecc:false,cas_latency:22,brand:"Corsair",rgb:false,kit_count:2,url:"#",asin:"SAMPLE29",price_per_gb:109.99/64},
+    {title:"Crucial Pro DDR5 48GB (2x24GB) 5600MHz SO-DIMM Laptop RAM",price:129.99,capacity_gb:48,speed_mhz:5600,ddr_type:"DDR5",form_factor:"SO-DIMM",ecc:false,cas_latency:46,brand:"Crucial",rgb:false,kit_count:2,url:"#",asin:"SAMPLE30",price_per_gb:129.99/48},
+    {title:"ADATA XPG LANCER RGB DDR5 64GB (2x32GB) 6000MHz CL30",price:189.99,capacity_gb:64,speed_mhz:6000,ddr_type:"DDR5",form_factor:"DIMM",ecc:false,cas_latency:30,brand:"XPG (ADATA)",rgb:true,kit_count:2,url:"#",asin:"SAMPLE31",price_per_gb:189.99/64},
+    {title:"G.Skill Trident Z5 RGB DDR5 32GB (2x16GB) 6400MHz CL32",price:114.99,capacity_gb:32,speed_mhz:6400,ddr_type:"DDR5",form_factor:"DIMM",ecc:false,cas_latency:32,brand:"G.Skill",rgb:true,kit_count:2,url:"#",asin:"SAMPLE32",price_per_gb:114.99/32},
+    {title:"TeamGroup T-Force Vulcan ECO DDR5 32GB (2x16GB) 5600MHz CL36",price:89.99,capacity_gb:32,speed_mhz:5600,ddr_type:"DDR5",form_factor:"DIMM",ecc:false,cas_latency:36,brand:"TeamGroup",rgb:false,kit_count:2,url:"#",asin:"SAMPLE33",price_per_gb:89.99/32},
+    {title:"PNY XLR8 DDR5 32GB (2x16GB) 6400MHz CL32",price:99.99,capacity_gb:32,speed_mhz:6400,ddr_type:"DDR5",form_factor:"DIMM",ecc:false,cas_latency:32,brand:"PNY",rgb:false,kit_count:2,url:"#",asin:"SAMPLE34",price_per_gb:99.99/32},
+    {title:"Lexar THOR DDR5 32GB (2x16GB) 6000MHz CL30",price:92.99,capacity_gb:32,speed_mhz:6000,ddr_type:"DDR5",form_factor:"DIMM",ecc:false,cas_latency:30,brand:"Lexar",rgb:true,kit_count:2,url:"#",asin:"SAMPLE35",price_per_gb:92.99/32},
+    {title:"Samsung DDR4 32GB 2Rx8 PC4-2666V SO-DIMM Laptop",price:59.99,capacity_gb:32,speed_mhz:2666,ddr_type:"DDR4",form_factor:"SO-DIMM",ecc:false,cas_latency:19,brand:"Samsung",rgb:false,kit_count:1,url:"#",asin:"SAMPLE36",price_per_gb:59.99/32},
+    {title:"Kingston FURY Beast DDR4 64GB (2x32GB) 3200MHz CL16",price:129.99,capacity_gb:64,speed_mhz:3200,ddr_type:"DDR4",form_factor:"DIMM",ecc:false,cas_latency:16,brand:"Kingston",rgb:true,kit_count:2,url:"#",asin:"SAMPLE37",price_per_gb:129.99/64},
+    {title:"Corsair Vengeance RGB DDR5 32GB (2x16GB) 6000MHz CL30",price:114.99,capacity_gb:32,speed_mhz:6000,ddr_type:"DDR5",form_factor:"DIMM",ecc:false,cas_latency:30,brand:"Corsair",rgb:true,kit_count:2,url:"#",asin:"SAMPLE38",price_per_gb:114.99/32},
+    {title:"Crucial MX500 1TB SSD",price:89.99,capacity_gb:1000,speed_mhz:0,ddr_type:"SSD",form_factor:"SSD",ecc:false,cas_latency:null,brand:"Crucial",rgb:false,kit_count:1,url:"#",asin:"SAMPLE39",price_per_gb:89.99/1000},
+    {title:"Samsung 990 Pro 2TB NVMe SSD",price:179.99,capacity_gb:2000,speed_mhz:0,ddr_type:"SSD",form_factor:"M.2 NVMe",ecc:false,cas_latency:null,brand:"Samsung",rgb:false,kit_count:1,url:"#",asin:"SAMPLE40",price_per_gb:179.99/2000},
+    {title:"Corsair Vengeance LPX DDR4 8GB 2400MHz CL16",price:14.99,capacity_gb:8,speed_mhz:2400,ddr_type:"DDR4",form_factor:"DIMM",ecc:false,cas_latency:16,brand:"Corsair",rgb:false,kit_count:1,url:"#",asin:"SAMPLE41",price_per_gb:14.99/8},
+    {title:"Patriot Viper Blackout DDR5 32GB (2x16GB) 6000MHz CL30",price:99.99,capacity_gb:32,speed_mhz:6000,ddr_type:"DDR5",form_factor:"DIMM",ecc:false,cas_latency:30,brand:"Patriot",rgb:false,kit_count:2,url:"#",asin:"SAMPLE42",price_per_gb:99.99/32},
+    {title:"Silicon Power Gaming DDR5 32GB (2x16GB) 6400MHz CL32",price:94.99,capacity_gb:32,speed_mhz:6400,ddr_type:"DDR5",form_factor:"DIMM",ecc:false,cas_latency:32,brand:"Silicon Power",rgb:true,kit_count:2,url:"#",asin:"SAMPLE43",price_per_gb:94.99/32},
+    {title:"OWC 32GB DDR5 4800MHz SO-DIMM Laptop Memory",price:89.99,capacity_gb:32,speed_mhz:4800,ddr_type:"DDR5",form_factor:"SO-DIMM",ecc:false,cas_latency:40,brand:"OWC",rgb:false,kit_count:1,url:"#",asin:"SAMPLE44",price_per_gb:89.99/32},
+    {title:"Nemix RAM DDR4 32GB (2x16GB) 3200MHz CL22 ECC UDIMM",price:69.99,capacity_gb:32,speed_mhz:3200,ddr_type:"DDR4",form_factor:"UDIMM",ecc:true,cas_latency:22,brand:"Nemix RAM",rgb:false,kit_count:2,url:"#",asin:"SAMPLE45",price_per_gb:69.99/32},
+    {title:"ServerMemory DDR5 64GB 4800MHz RDIMM ECC",price:199.99,capacity_gb:64,speed_mhz:4800,ddr_type:"DDR5",form_factor:"RDIMM",ecc:true,cas_latency:40,brand:"ServerMemory",rgb:false,kit_count:1,url:"#",asin:"SAMPLE46",price_per_gb:199.99/64},
+    {title:"HPE DDR5 32GB 4800MHz RDIMM ECC Server Memory",price:109.99,capacity_gb:32,speed_mhz:4800,ddr_type:"DDR5",form_factor:"RDIMM",ecc:true,cas_latency:40,brand:"HPE",rgb:false,kit_count:1,url:"#",asin:"SAMPLE47",price_per_gb:109.99/32},
+    {title:"Kingston Server Premier DDR5 32GB 4800MHz RDIMM ECC",price:99.99,capacity_gb:32,speed_mhz:4800,ddr_type:"DDR5",form_factor:"RDIMM",ecc:true,cas_latency:40,brand:"Kingston",rgb:false,kit_count:1,url:"#",asin:"SAMPLE48",price_per_gb:99.99/32},
+    {title:"Crucial DDR4 32GB 3200MHz RDIMM ECC Server",price:79.99,capacity_gb:32,speed_mhz:3200,ddr_type:"DDR4",form_factor:"RDIMM",ecc:true,cas_latency:22,brand:"Crucial",rgb:false,kit_count:1,url:"#",asin:"SAMPLE49",price_per_gb:79.99/32},
+    {title:"G.Skill Ripjaws S5 DDR5 32GB (2x16GB) 5600MHz CL28",price:99.99,capacity_gb:32,speed_mhz:5600,ddr_type:"DDR5",form_factor:"DIMM",ecc:false,cas_latency:28,brand:"G.Skill",rgb:false,kit_count:2,url:"#",asin:"SAMPLE50",price_per_gb:99.99/32},
+  ];
+  allProducts.forEach(p => { if(!p.price_per_gb && p.price && p.capacity_gb) p.price_per_gb = p.price / p.capacity_gb; });
+  render();
+}
+
+// ─── Filter & Sort ─────────────────────────────────────────────────────
+
+function getFilters() {
+  return {
+    ddr: document.getElementById('filter-ddr').value,
+    form: document.getElementById('filter-form').value,
+    ecc: document.getElementById('filter-ecc').value,
+    speed: document.getElementById('filter-speed').value,
+    cap: document.getElementById('filter-cap').value,
+    search: document.getElementById('filter-search').value.toLowerCase().trim(),
+  };
+}
+
+function inRange(val, rangeStr) {
+  if (!rangeStr) return true;
+  if (rangeStr.includes('-')) {
+    const [lo, hi] = rangeStr.split('-').map(Number);
+    return val >= lo && val <= hi;
+  }
+  return val >= Number(rangeStr);
+}
+
+function filterProducts() {
+  const f = getFilters();
+  return allProducts.filter(p => {
+    if (f.ddr && p.ddr_type !== f.ddr) return false;
+    if (f.form && p.form_factor !== f.form) return false;
+    if (f.ecc === 'yes' && !p.ecc) return false;
+    if (f.ecc === 'no' && p.ecc) return false;
+    if (f.speed && !inRange(p.speed_mhz, f.speed)) return false;
+    if (f.cap && !inRange(p.capacity_gb, f.cap)) return false;
+    if (f.search) {
+      const t = (p.title + ' ' + (p.brand||'') + ' ' + (p.ddr_type||'') + ' ' + (p.form_factor||'')).toLowerCase();
+      if (!t.includes(f.search)) return false;
+    }
+    return true;
+  });
+}
+
+function sortProducts(products, col, dir) {
+  const order = dir === 'asc' ? 1 : -1;
+  return [...products].sort((a, b) => {
+    let va, vb;
+    switch(col) {
+      case 'ppgb': va = a.price_per_gb || 9999; vb = b.price_per_gb || 9999; break;
+      case 'pptb': va = (a.price_per_gb || 9999) * 1000; vb = (b.price_per_gb || 9999) * 1000; break;
+      case 'price': va = a.price || 99999; vb = b.price || 99999; break;
+      case 'cap': va = a.capacity_gb || 0; vb = b.capacity_gb || 0; break;
+      case 'speed': va = a.speed_mhz || 0; vb = b.speed_mhz || 0; break;
+      default: va = a.price_per_gb || 9999; vb = b.price_per_gb || 9999;
+    }
+    if (va < vb) return -1 * order;
+    if (va > vb) return 1 * order;
+    return 0;
+  });
+}
+
+// ─── Render ────────────────────────────────────────────────────────────
+
+function ppgbClass(val) {
+  if (!val) return '';
+  if (val < 2) return 'ppgb-good';
+  if (val < 4) return 'ppgb-ok';
+  if (val < 7) return 'ppgb-meh';
+  return 'ppgb-bad';
+}
+
+function formatUSD(n) {
+  if (n == null) return '—';
+  return '$' + Number(n).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+function render() {
+  const filtered = filterProducts();
+  const sorted = sortProducts(filtered, currentSort.col, currentSort.dir);
+
+  const tbody = document.getElementById('table-body');
+  const empty = document.getElementById('empty');
+
+  if (sorted.length === 0) {
+    tbody.innerHTML = '';
+    empty.classList.add('show');
+  } else {
+    empty.classList.remove('show');
+  }
+
+  document.getElementById('stat-count').textContent = sorted.length;
+  const best = sorted[0];
+  document.getElementById('stat-best').textContent = best ? formatUSD(best.price_per_gb) + '/GB' : '—';
+
+  // Figure out top 3 best value for badge
+  const top3 = new Set(sorted.slice(0, 3).map(p => p.asin));
+
+  tbody.innerHTML = sorted.map(p => {
+    const ppgb = p.price_per_gb ? Number(p.price_per_gb).toFixed(3) : '—';
+    const pptb = ppgb !== '—' ? '$' + (p.price_per_gb * 1000).toFixed(2) : '—';
+    const price = p.price ? '$' + p.price.toFixed(2) : '—';
+    const cap = p.capacity_gb ? p.capacity_gb + ' GB' : '—';
+    const speed = p.speed_mhz ? p.speed_mhz + ' MHz' : '—';
+    const ddr = p.ddr_type || '—';
+    const form = p.form_factor || '—';
+    const ecc = p.ecc ? '✓' : '—';
+    const cl = p.cas_latency || '—';
+    const brand = p.brand || '';
+    const hasRgb = p.rgb ? '<span class="badge badge-rgb">RGB</span>' : '';
+    const isBest = top3.has(p.asin) ? '<span class="best-value">Best Value</span> ' : '';
+
+    const ddrClass = p.ddr_type ? 'badge badge-' + p.ddr_type.toLowerCase() : '';
+    const formClass = p.form_factor === 'SO-DIMM' ? 'badge badge-so' : '';
+    const eccBadge = p.ecc ? '<span class="badge badge-ecc">ECC</span> ' : '';
+    const speedB = p.speed_mhz > 6000 ? '<span class="badge" style="background:#2d1f00;color:#ffa657">Fast</span>' : '';
+
+    const titleHtml = `${isBest}${p.title}${hasRgb ? ' ' + hasRgb : ''}`;
+    const specsHtml = `${ddrClass ? `<span class="${ddrClass}">${p.ddr_type}</span>` : ddr} ${formClass ? `<span class="${formClass}">${form}</span>` : ''} ${eccBadge} ${speedB}`;
+
+    return `<tr>
+      <td data-label="Product">${titleHtml}</td>
+      <td data-label="$ / GB" class="ppgb ${ppgbClass(p.price_per_gb)}">${ppgb}</td>
+      <td data-label="Price">${price}</td>
+      <td data-label="Capacity" class="cap">${cap}</td>
+      <td data-label="Speed" class="speed">${speed}</td>
+      <td data-label="Type">${specsHtml}</td>
+      <td data-label="Form">${form}</td>
+      <td data-label="ECC">${ecc}</td>
+      <td data-label="CL">${cl}</td>
+      <td data-label="Buy">${p.url && p.url !== '#' ? `<a href="${p.url}" target="_blank" rel="noopener">🛒Buy</a>` : '—'}</td>
+    </tr>`;
+  }).join('');
+}
+
+// ─── Events ────────────────────────────────────────────────────────────
+
+document.querySelectorAll('#filters select, #filters input').forEach(el => {
+  el.addEventListener('change', render);
+  el.addEventListener('input', render);
+});
+
+// Column header sorting
+document.querySelectorAll('thead th[data-col]').forEach(th => {
+  th.addEventListener('click', () => {
+    const col = th.dataset.col;
+    if (currentSort.col === col) {
+      currentSort.dir = currentSort.dir === 'asc' ? 'desc' : 'asc';
+    } else {
+      currentSort.col = col;
+      currentSort.dir = 'asc';
+    }
+    // Update sort indicators
+    document.querySelectorAll('thead th[data-col]').forEach(h => {
+      h.classList.remove('sort-asc', 'sort-desc');
+    });
+    th.classList.add(currentSort.dir === 'asc' ? 'sort-asc' : 'sort-desc');
+    render();
+  });
+});
+
+// Sort buttons
+['sort-ppgb', 'sort-price', 'sort-speed'].forEach(id => {
+  document.getElementById(id).addEventListener('click', () => {
+    document.querySelectorAll('.btn[data-sort]').forEach(b => b.classList.remove('active'));
+    const btn = document.getElementById(id);
+    btn.classList.add('active');
+    const col = btn.dataset.sort;
+    if (currentSort.col === col) {
+      currentSort.dir = currentSort.dir === 'asc' ? 'desc' : 'asc';
+    } else {
+      currentSort.col = col;
+      currentSort.dir = 'asc';
+    }
+    render();
+  });
+});
+
+// Init sort indicator
+document.querySelector('thead th[data-col="ppgb"]').classList.add('sort-asc');
+
+loadData();
+</script>
+</body>
+</html>
