@@ -1,27 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://buycheapram.com/</loc>
+    <loc>https://buycheapram.vercel.app/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://buycheapram.com/privacy-policy.html</loc>
+    <loc>https://buycheapram.vercel.app/best-ddr5-ram-2026</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://buycheapram.vercel.app/cheap-ddr4-ram-deals</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://buycheapram.vercel.app/ddr5-vs-ddr4</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://buycheapram.vercel.app/laptop-ram-upgrade-guide</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://buycheapram.vercel.app/server-ecc-ram-guide</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://buycheapram.vercel.app/privacy-policy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://buycheapram.com/terms-of-service.html</loc>
+    <loc>https://buycheapram.vercel.app/terms-of-service</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://buycheapram.com/affiliate-disclosure.html</loc>
+    <loc>https://buycheapram.vercel.app/affiliate-disclosure</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://buycheapram.com/disclaimer.html</loc>
+    <loc>https://buycheapram.vercel.app/disclaimer</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
