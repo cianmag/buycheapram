@@ -6,6 +6,21 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://buycheapram.vercel.app/buy-ram</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://buycheapram.vercel.app/cheap-ram</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://buycheapram.vercel.app/ram-buying-guide</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://buycheapram.vercel.app/best-ddr5-ram-2026</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
