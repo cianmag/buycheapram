@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<!-- Google Analytics 4 (replace G-T2MSYFX078 with your measurement ID from analytics.google.com) -->
+<!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-T2MSYFX078"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(localStorage.getItem('cookie_consent')==='accepted'){gtag('config','G-T2MSYFX078');}</script>
 <title>BuyCheapRAM — Compare Cheap DDR5, DDR4 & Server RAM by $/GB</title>
@@ -140,24 +140,58 @@ td:last-child{text-align:center;padding-right:20px}
 .faq-card{border:1px solid #21262d;background:#161b22;border-radius:10px;padding:14px}
 .faq-card h3{margin-top:0;color:#f0f6fc}
 
-/* Responsive table: cards on mobile */
+/* ─── Pagination ─── */
+#pagination{display:flex;align-items:center;justify-content:center;gap:4px;padding:16px 20px;flex-wrap:wrap}
+#pagination .page-info{color:#8b949e;font-size:12px;margin:0 12px;white-space:nowrap}
+#pagination button{min-width:36px;height:36px;border:1px solid #30363d;border-radius:8px;background:#161b22;color:#c9d1d9;font-size:13px;font-weight:500;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;justify-content:center;padding:0 8px}
+#pagination button:hover:not(:disabled):not(.active){background:#21262d;border-color:#58a6ff;color:#58a6ff}
+#pagination button.active{background:#1f6feb;border-color:#1f6feb;color:#fff;font-weight:700;cursor:default}
+#pagination button:disabled{opacity:.3;cursor:not-allowed}
+#pagination button.nav-arrow{font-size:16px;font-weight:700;min-width:40px}
+#pagination .ellipsis{color:#484f58;font-size:14px;padding:0 4px;user-select:none}
+
+/* ─── Mobile ─── */
 @media(max-width:768px){
-  #header .stats{width:100%;margin-left:0;margin-top:6px}
+  #header{padding:12px 14px;gap:8px}
+  #header h1{font-size:17px}
+  #header .tagline{display:none}
+  #header .stats{width:100%;margin-left:0;margin-top:4px;gap:12px}
+  #last-update{margin-left:0}
   #filters{gap:8px;padding:10px 12px}
-  .search-wrap input{width:120px}
-  #header h1{font-size:16px}
-  thead th,td{padding:4px 6px;font-size:11px}
-  td:first-child{padding-left:10px}
-  thead th:first-child{padding-left:10px}
+  .filter-group{gap:4px}
+  .filter-group label{font-size:10px}
+  .filter-group select,.filter-group input{padding:6px 8px;font-size:13px;min-height:36px}
+  .search-wrap input{width:100%;min-width:0}
+  .search-wrap{flex:1;min-width:140px}
+  .btn{padding:6px 14px;font-size:13px;min-height:36px}
+  #table-wrap{padding:0}
+  thead th,td{padding:5px 8px;font-size:11px}
+  td:first-child{padding-left:12px}
+  thead th:first-child{padding-left:12px}
+  .hero{padding:20px 14px 14px}
+  .hero h2{font-size:20px}
+  .hero p{font-size:13px}
+  .hero .seo-links{gap:6px}
+  .hero .seo-links a{padding:4px 8px;font-size:11px}
+  .content-section{padding:20px 14px}
+  .faq-grid{grid-template-columns:1fr}
+  #pagination{gap:3px;padding:12px 10px}
+  #pagination button{min-width:34px;height:34px;font-size:12px}
+  #pagination button.nav-arrow{min-width:36px}
+  #pagination .page-info{font-size:11px;margin:0 6px;width:100%;text-align:center}
 }
 @media(max-width:500px){
   table,thead,tbody,th,td,tr{display:block}
   thead{display:none}
   td{display:grid;grid-template-columns:1fr 1fr;text-align:left;padding:2px 10px;border:none;font-size:11px}
-  td:first-child{grid-column:1/-1;padding:6px 10px;font-weight:600;font-size:12px;background:#161b22;border-radius:4px 4px 0 0;margin-top:4px}
+  td:first-child{grid-column:1/-1;padding:8px 10px;font-weight:600;font-size:12px;background:#161b22;border-radius:6px 6px 0 0;margin-top:6px}
   td::before{content:attr(data-label);color:#8b949e;font-size:10px;text-transform:uppercase;letter-spacing:.5px}
-  td:last-child{grid-column:1/-1;text-align:center;padding:4px;background:#161b22;border-radius:0 0 4px 4px;margin-bottom:4px;border-bottom:1px solid #21262d}
+  td:last-child{grid-column:1/-1;text-align:center;padding:6px;background:#161b22;border-radius:0 0 6px 6px;margin-bottom:6px;border-bottom:1px solid #21262d}
   td .badge{display:inline}
+  #header h1{font-size:15px}
+  .hero h2{font-size:18px}
+  #pagination button{min-width:30px;height:30px;font-size:11px;border-radius:6px}
+  #pagination .page-info{font-size:10px}
 }
 </style>
 </head>
@@ -273,6 +307,8 @@ td:last-child{text-align:center;padding-right:20px}
   </table>
 </section>
 
+<div id="pagination" aria-label="Pagination"></div>
+
 <div id="empty" class="show">
   <p style="font-size:24px;margin-bottom:12px">🔍</p>
   <p>No results match your filters.</p>
@@ -385,6 +421,8 @@ function declineCookies(){
 // ─── Data ──────────────────────────────────────────────────────────────
 let allProducts = [];
 let currentSort = { col: 'ppgb', dir: 'asc' };
+let currentPage = 1;
+const PER_PAGE = 100;
 
 async function loadData() {
   try {
@@ -400,7 +438,6 @@ async function loadData() {
 }
 
 function loadSampleData() {
-  // Fallback sample data so the site works without the scraper
   allProducts = [
     {title:"Corsair Vengeance DDR5 32GB (2x16GB) 6400MHz CL32",price:109.99,capacity_gb:32,speed_mhz:6400,ddr_type:"DDR5",form_factor:"DIMM",ecc:false,cas_latency:32,brand:"Corsair",rgb:false,kit_count:2,url:"#",asin:"SAMPLE01",price_per_gb:109.99/32},
     {title:"G.Skill Trident Z5 Neo DDR5 32GB (2x16GB) 6000MHz CL30",price:104.99,capacity_gb:32,speed_mhz:6000,ddr_type:"DDR5",form_factor:"DIMM",ecc:false,cas_latency:30,brand:"G.Skill",rgb:true,kit_count:2,url:"#",asin:"SAMPLE02",price_per_gb:104.99/32},
@@ -514,7 +551,83 @@ function sortProducts(products, col, dir) {
   });
 }
 
+// ─── Pagination ────────────────────────────────────────────────────────
+
+function getTotalPages(totalItems) {
+  return Math.max(1, Math.ceil(totalItems / PER_PAGE));
+}
+
+function renderPagination(totalItems) {
+  const totalPages = getTotalPages(totalItems);
+  const container = document.getElementById('pagination');
+
+  if (totalPages <= 1) {
+    container.innerHTML = '';
+    return;
+  }
+
+  let html = '';
+
+  // Prev button
+  html += `<button class="nav-arrow" onclick="goToPage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''} aria-label="Previous page">&lsaquo;</button>`;
+
+  // Page numbers with ellipsis logic
+  const pages = getVisiblePages(currentPage, totalPages);
+  for (const p of pages) {
+    if (p === '...') {
+      html += '<span class="ellipsis">&hellip;</span>';
+    } else {
+      html += `<button class="${p === currentPage ? 'active' : ''}" onclick="goToPage(${p})" aria-label="Page ${p}">${p}</button>`;
+    }
+  }
+
+  // Next button
+  html += `<button class="nav-arrow" onclick="goToPage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''} aria-label="Next page">&rsaquo;</button>`;
+
+  // Page info
+  const start = (currentPage - 1) * PER_PAGE + 1;
+  const end = Math.min(currentPage * PER_PAGE, totalItems);
+  html += `<span class="page-info">Showing ${start}–${end} of ${totalItems.toLocaleString()}</span>`;
+
+  container.innerHTML = html;
+}
+
+function getVisiblePages(current, total) {
+  if (total <= 7) {
+    return Array.from({length: total}, (_, i) => i + 1);
+  }
+
+  const pages = [];
+  pages.push(1);
+
+  if (current > 3) pages.push('...');
+
+  const start = Math.max(2, current - 1);
+  const end = Math.min(total - 1, current + 1);
+
+  for (let i = start; i <= end; i++) {
+    pages.push(i);
+  }
+
+  if (current < total - 2) pages.push('...');
+
+  pages.push(total);
+
+  return pages;
+}
+
+function goToPage(page) {
+  const totalPages = getTotalPages(currentFilteredLength);
+  if (page < 1 || page > totalPages) return;
+  currentPage = page;
+  render();
+  // Scroll to top of table
+  document.getElementById('table-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
 // ─── Render ────────────────────────────────────────────────────────────
+
+let currentFilteredLength = 0;
 
 function ppgbClass(val) {
   if (!val) return '';
@@ -532,6 +645,16 @@ function formatUSD(n) {
 function render() {
   const filtered = filterProducts();
   const sorted = sortProducts(filtered, currentSort.col, currentSort.dir);
+  currentFilteredLength = sorted.length;
+
+  // Clamp page if filters reduced results
+  const totalPages = getTotalPages(sorted.length);
+  if (currentPage > totalPages) currentPage = totalPages;
+  if (currentPage < 1) currentPage = 1;
+
+  // Slice for current page
+  const startIdx = (currentPage - 1) * PER_PAGE;
+  const pageItems = sorted.slice(startIdx, startIdx + PER_PAGE);
 
   const tbody = document.getElementById('table-body');
   const empty = document.getElementById('empty');
@@ -547,10 +670,10 @@ function render() {
   const best = sorted[0];
   document.getElementById('stat-best').textContent = best ? formatUSD(best.price_per_gb) + '/GB' : '—';
 
-  // Figure out top 3 best value for badge
+  // Figure out top 3 best value for badge (across all pages, not just current)
   const top3 = new Set(sorted.slice(0, 3).map(p => p.asin));
 
-  tbody.innerHTML = sorted.map(p => {
+  tbody.innerHTML = pageItems.map(p => {
     const ppgb = p.price_per_gb ? Number(p.price_per_gb).toFixed(3) : '—';
     const pptb = ppgb !== '—' ? '$' + (p.price_per_gb * 1000).toFixed(2) : '—';
     const price = p.price ? '$' + p.price.toFixed(2) : '—';
@@ -585,13 +708,15 @@ function render() {
       <td data-label="Buy">${p.url && p.url !== '#' ? `<a href="${p.url}" target="_blank" rel="noopener">🛒Buy</a>` : '—'}</td>
     </tr>`;
   }).join('');
+
+  renderPagination(sorted.length);
 }
 
 // ─── Events ────────────────────────────────────────────────────────────
 
 document.querySelectorAll('#filters select, #filters input').forEach(el => {
-  el.addEventListener('change', render);
-  el.addEventListener('input', render);
+  el.addEventListener('change', () => { currentPage = 1; render(); });
+  el.addEventListener('input', () => { currentPage = 1; render(); });
 });
 
 // Column header sorting
@@ -604,11 +729,11 @@ document.querySelectorAll('thead th[data-col]').forEach(th => {
       currentSort.col = col;
       currentSort.dir = 'asc';
     }
-    // Update sort indicators
     document.querySelectorAll('thead th[data-col]').forEach(h => {
       h.classList.remove('sort-asc', 'sort-desc');
     });
     th.classList.add(currentSort.dir === 'asc' ? 'sort-asc' : 'sort-desc');
+    currentPage = 1;
     render();
   });
 });
@@ -626,6 +751,7 @@ document.querySelectorAll('thead th[data-col]').forEach(th => {
       currentSort.col = col;
       currentSort.dir = 'asc';
     }
+    currentPage = 1;
     render();
   });
 });
