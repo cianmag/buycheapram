@@ -181,17 +181,151 @@ td:last-child{text-align:center;padding-right:20px}
   #pagination .page-info{font-size:11px;margin:0 6px;width:100%;text-align:center}
 }
 @media(max-width:500px){
+  /* Card layout for mobile */
   table,thead,tbody,th,td,tr{display:block}
   thead{display:none}
-  td{display:grid;grid-template-columns:1fr 1fr;text-align:left;padding:2px 10px;border:none;font-size:11px}
-  td:first-child{grid-column:1/-1;padding:8px 10px;font-weight:600;font-size:12px;background:#161b22;border-radius:6px 6px 0 0;margin-top:6px}
-  td::before{content:attr(data-label);color:#8b949e;font-size:10px;text-transform:uppercase;letter-spacing:.5px}
-  td:last-child{grid-column:1/-1;text-align:center;padding:6px;background:#161b22;border-radius:0 0 6px 6px;margin-bottom:6px;border-bottom:1px solid #21262d}
+  tbody tr{
+    background:#161b22;
+    border:1px solid #21262d;
+    border-radius:10px;
+    margin:8px 12px;
+    padding:0;
+    overflow:hidden;
+    transition:border-color .15s;
+  }
+  tbody tr:hover{border-color:#30363d}
+  /* Product title row */
+  td:first-child{
+    display:block;
+    text-align:left;
+    padding:12px 14px 6px;
+    font-weight:600;
+    font-size:13px;
+    line-height:1.4;
+    background:transparent;
+    border-radius:0;
+    margin-top:0;
+    color:#f0f6fc;
+    word-break:break-word;
+    white-space:normal;
+  }
+  /* Price + $/GB hero row */
+  td[data-label="$ / GB"]{
+    display:inline-block;
+    width:auto;
+    text-align:left;
+    padding:2px 14px 2px;
+    font-size:16px;
+    font-weight:800;
+    border:none;
+  }
+  td[data-label="$ / GB"]::before{display:none}
+  td[data-label="Price"]{
+    display:inline-block;
+    width:auto;
+    text-align:left;
+    padding:2px 6px 2px 0;
+    font-size:16px;
+    font-weight:700;
+    border:none;
+    color:#f0f6fc;
+  }
+  td[data-label="Price"]::before{display:none}
+  /* Specs row (capacity, speed, type) */
+  td[data-label="Capacity"],
+  td[data-label="Speed"]{
+    display:inline-block;
+    width:auto;
+    text-align:left;
+    padding:4px 6px 4px 14px;
+    font-size:12px;
+    border:none;
+  }
+  td[data-label="Capacity"]::before,
+  td[data-label="Speed"]::before{
+    content:attr(data-label) ": ";
+    color:#8b949e;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:.3px;
+    margin-right:2px;
+  }
+  /* Type/Form/ECC/CL badges row */
+  td[data-label="Type"],
+  td[data-label="Form"],
+  td[data-label="ECC"],
+  td[data-label="CL"]{
+    display:inline-block;
+    width:auto;
+    text-align:left;
+    padding:4px 6px;
+    font-size:11px;
+    border:none;
+  }
+  td[data-label="Type"]::before,
+  td[data-label="Form"]::before,
+  td[data-label="ECC"]::before,
+  td[data-label="CL"]::before{
+    display:none;
+  }
+  /* Buy button */
+  td[data-label="Buy"]{
+    display:block;
+    text-align:center;
+    padding:10px 14px 14px;
+    border:none;
+    border-radius:0;
+    background:transparent;
+  }
+  td[data-label="Buy"]::before{display:none}
+  td[data-label="Buy"] a{
+    display:block;
+    background:#238636;
+    color:#fff;
+    padding:10px 20px;
+    border-radius:8px;
+    font-size:14px;
+    font-weight:600;
+    text-decoration:none;
+    text-align:center;
+    transition:background .15s;
+  }
+  td[data-label="Buy"] a:hover{background:#2ea043}
+  td[data-label="Buy"] a:active{background:#1a7f37}
   td .badge{display:inline}
+
   #header h1{font-size:15px}
   .hero h2{font-size:18px}
-  #pagination button{min-width:30px;height:30px;font-size:11px;border-radius:6px}
-  #pagination .page-info{font-size:10px}
+
+  /* Mobile pagination - bigger touch targets */
+  #pagination{gap:6px;padding:14px 10px 20px}
+  #pagination button{
+    min-width:40px;
+    height:40px;
+    font-size:14px;
+    border-radius:10px;
+    font-weight:600;
+  }
+  #pagination button.nav-arrow{min-width:44px;height:44px;font-size:18px}
+  #pagination button.active{
+    background:#1f6feb;
+    border-color:#1f6feb;
+    box-shadow:0 2px 8px rgba(31,111,235,.35);
+  }
+  #pagination .page-info{font-size:0;margin:6px 0 0;width:100%;text-align:center}
+  #pagination .page-info::after{content:"Page " attr(data-pages);font-size:12px;color:#8b949e}
+
+  /* Sticky filter bar scroll */
+  #filters{
+    overflow-x:auto;
+    flex-wrap:nowrap;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    gap:10px;
+    padding:10px 12px;
+  }
+  #filters::-webkit-scrollbar{display:none}
+  .filter-group{flex-shrink:0}
 }
 </style>
 </head>
@@ -422,7 +556,7 @@ function declineCookies(){
 let allProducts = [];
 let currentSort = { col: 'ppgb', dir: 'asc' };
 let currentPage = 1;
-const PER_PAGE = 100;
+const PER_PAGE = 70;
 
 async function loadData() {
   try {
@@ -587,29 +721,29 @@ function renderPagination(totalItems) {
   // Page info
   const start = (currentPage - 1) * PER_PAGE + 1;
   const end = Math.min(currentPage * PER_PAGE, totalItems);
-  html += `<span class="page-info">Showing ${start}–${end} of ${totalItems.toLocaleString()}</span>`;
+  html += `<span class="page-info" data-pages="${currentPage}/${totalPages}">Showing ${start}–${end} of ${totalItems.toLocaleString()}</span>`;
 
   container.innerHTML = html;
 }
 
 function getVisiblePages(current, total) {
-  if (total <= 7) {
+  if (total <= 9) {
     return Array.from({length: total}, (_, i) => i + 1);
   }
 
   const pages = [];
   pages.push(1);
 
-  if (current > 3) pages.push('...');
+  if (current > 4) pages.push('...');
 
-  const start = Math.max(2, current - 1);
-  const end = Math.min(total - 1, current + 1);
+  const start = Math.max(2, current - 2);
+  const end = Math.min(total - 1, current + 2);
 
   for (let i = start; i <= end; i++) {
     pages.push(i);
   }
 
-  if (current < total - 2) pages.push('...');
+  if (current < total - 3) pages.push('...');
 
   pages.push(total);
 

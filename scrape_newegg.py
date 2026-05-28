@@ -276,6 +276,13 @@ def main():
     }
 
     out_path = "/home/cian/buycheapram/site/data/ram_prices.json"
+
+    # Safety: don't overwrite existing data with 0 or fewer products
+    if len(all_products) < 10:
+        print(f"\nABORT: Only {len(all_products)} products scraped (likely blocked by CAPTCHA).")
+        print(f"Keeping existing data at {out_path} untouched.")
+        return
+
     with open(out_path, "w") as f:
         json.dump(output, f, indent=2)
 
