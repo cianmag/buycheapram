@@ -48,9 +48,13 @@ article li{margin:4px 0}
 footer{text-align:center;padding:20px;color:#484f58;font-size:11px;border-top:1px solid #21262d;margin-top:40px}
 footer a{color:#58a6ff;margin:0 8px;font-size:11px}
 @media(max-width:600px){article h1{font-size:22px}article{padding:20px 14px}}
+.content-section{margin:32px 0}.faq-grid{display:grid;gap:16px;margin-top:16px}.faq-card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:20px}.faq-card h3{margin:0 0 8px;color:#f0f6fc;font-size:16px}.faq-card p{margin:0;color:#8b949e;font-size:14px}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://buycheapram.vercel.app/"},{"@type":"ListItem","position":2,"name":"Laptop RAM Upgrade Guide","item":"https://buycheapram.vercel.app/laptop-ram-upgrade-guide"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I upgrade my laptop's RAM?","acceptedAnswer":{"@type":"Answer","text":"Many laptops have upgradeable RAM, but some ultrabooks have soldered memory. Check your model by searching '[laptop model] RAM upgrade' or looking at Task Manager for available slots."}},{"@type":"Question","name":"How do I check what RAM my laptop uses?","acceptedAnswer":{"@type":"Answer","text":"Open Task Manager on Windows, go to Performance, then Memory. It shows your DDR type, speed, slots used, and form factor. This tells you exactly what to buy."}},{"@type":"Question","name":"Can I mix different brands of laptop RAM?","acceptedAnswer":{"@type":"Answer","text":"You can, but it's not ideal. Different brands may have different timings, causing the system to run at the slower stick's speed. Buy a matched kit for best results."}},{"@type":"Question","name":"Will more RAM make my laptop faster?","acceptedAnswer":{"@type":"Answer","text":"If you're running out of RAM (hitting 90%+ usage), upgrading will make a dramatic difference. If you already have enough RAM, adding more won't help."}},{"@type":"Question","name":"Is it worth upgrading an old laptop's RAM?","acceptedAnswer":{"@type":"Answer","text":"If the laptop has a decent CPU and SSD, a RAM upgrade for $25-40 can extend its useful life by 2-3 years. If it's also slow due to an old CPU, save toward a new laptop."}}]}
 </script>
 </head>
 <body>
@@ -137,15 +141,16 @@ footer a{color:#58a6ff;margin:0 8px;font-size:11px}
 <li><strong>Have a Phillips screwdriver ready:</strong> Most laptops use small Phillips screws for the bottom panel — check your model's teardown guide if you're unsure</li>
 </ul>
 
-<h2>FAQ</h2>
-<h3>Can I mix different brands of laptop RAM?</h3>
-<p>You can, but it's not ideal. Different brands may have different timings, which can cause the system to run at the slower stick's speed. For best results, buy a matched kit.</p>
-
-<h3>Will more RAM make my laptop faster?</h3>
-<p>If you're currently running out of RAM (hitting 90%+ usage), yes — upgrading will make a dramatic difference. If you already have enough RAM, adding more won't help.</p>
-
-<h3>Is it worth upgrading an old laptop's RAM?</h3>
-<p>If the laptop is otherwise fine (decent CPU, SSD), a RAM upgrade for $25-40 can extend its useful life by 2-3 years. If it's also slow due to an old CPU, the money might be better saved toward a new laptop.</p>
+<section class="content-section" aria-labelledby="faq-title">
+<h2 id="faq-title">Laptop RAM Upgrade FAQ</h2>
+<div class="faq-grid">
+<article class="faq-card"><h3>Can I upgrade my laptop's RAM?</h3><p>Many laptops have upgradeable RAM, but some ultrabooks have soldered memory. Check your model by searching '[laptop model] RAM upgrade' or looking at Task Manager for available slots.</p></article>
+<article class="faq-card"><h3>How do I check what RAM my laptop uses?</h3><p>Open Task Manager on Windows, go to Performance, then Memory. It shows your DDR type, speed, slots used, and form factor. This tells you exactly what to buy.</p></article>
+<article class="faq-card"><h3>Can I mix different brands of laptop RAM?</h3><p>You can, but it's not ideal. Different brands may have different timings, causing the system to run at the slower stick's speed. Buy a matched kit for best results.</p></article>
+<article class="faq-card"><h3>Will more RAM make my laptop faster?</h3><p>If you're running out of RAM (hitting 90%+ usage), upgrading will make a dramatic difference. If you already have enough RAM, adding more won't help.</p></article>
+<article class="faq-card"><h3>Is it worth upgrading an old laptop's RAM?</h3><p>If the laptop has a decent CPU and SSD, a RAM upgrade for $25-40 can extend its useful life by 2-3 years. If it's also slow due to an old CPU, save toward a new laptop.</p></article>
+</div>
+</section>
 
 
 <div class="related" style="background:#161b22;border:1px solid #30363d;border-radius:10px;padding:20px;margin:32px 0">
