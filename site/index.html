@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-T2MSYFX078"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(localStorage.getItem('cookie_consent')==='accepted'){gtag('config','G-T2MSYFX078');}</script>
 <title>BuyCheapRAM — Compare Cheap DDR5, DDR4 & Server RAM by $/GB</title>
@@ -23,7 +22,7 @@
 <meta name="twitter:title" content="BuyCheapRAM — Compare Cheap RAM by $/GB">
 <meta name="twitter:description" content="Daily RAM price comparison for DDR5, DDR4, laptop, desktop, ECC, and server memory.">
 <meta name="twitter:image" content="https://buycheapram.vercel.app/og-image.png">
-<meta name="theme-color" content="#0f1117">
+<meta name="theme-color" content="#fafafa">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <script type="application/ld+json">
 {
@@ -451,290 +450,52 @@
   ]
 }
 </script>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,sans-serif;font-size:13px;background:#0f1117;color:#e1e4e8;min-height:100vh}
-a{color:#58a6ff;text-decoration:none}
-a:hover{text-decoration:underline}
-/* Header */
-#header{background:#161b22;border-bottom:1px solid #30363d;padding:16px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:12px}
-#header h1{font-size:20px;font-weight:700;margin:0;background:linear-gradient(135deg,#58a6ff,#bc8cff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-#header .tagline{color:#8b949e;font-size:12px;margin-left:4px;-webkit-text-fill-color:#8b949e}
-#header .stats{display:flex;gap:16px;margin-left:auto;font-size:12px}
-#header .stats span{color:#8b949e}
-#header .stats strong{color:#e1e4e8}
-#last-update{color:#484f58;font-size:10px;margin-left:12px}
-/* Filters */
-#filters{background:#161b22;padding:12px 20px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;border-bottom:1px solid #30363d;position:sticky;top:0;z-index:100}
-.filter-group{display:flex;align-items:center;gap:6px}
-.filter-group label{color:#8b949e;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
-.filter-group select,.filter-group input{background:#0d1117;color:#e1e4e8;border:1px solid #30363d;border-radius:6px;padding:4px 8px;font-size:12px;outline:none}
-.filter-group select:focus,.filter-group input:focus{border-color:#58a6ff}
-.filter-group input{width:60px}
-.btn{border:1px solid #30363d;border-radius:6px;padding:4px 12px;font-size:12px;cursor:pointer;color:#c9d1d9;background:#21262d;transition:.15s}
-.btn:hover{background:#30363d;border-color:#8b949e}
-.btn.active{background:#1f6feb;border-color:#1f6feb;color:#fff}
-.search-wrap{position:relative}
-.search-wrap input{padding-left:24px;width:180px}
-.search-wrap::before{content:'🔍';position:absolute;left:6px;top:4px;font-size:10px;opacity:.5}
-/* Table */
-#table-wrap{overflow-x:auto;padding:0}
-table{width:100%;border-collapse:collapse;font-size:12px}
-thead th{background:#1c2128;color:#8b949e;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.5px;padding:8px 10px;text-align:right;border-bottom:2px solid #30363d;cursor:pointer;white-space:nowrap;user-select:none;position:sticky;top:0;z-index:10}
-thead th:first-child{text-align:left;padding-left:20px}
-thead th:last-child{text-align:center;padding-right:20px}
-thead th .sort-arrow{display:inline-block;margin-left:4px;color:#484f58;font-size:9px}
-thead th.sort-asc .sort-arrow{color:#58a6ff}
-thead th.sort-desc .sort-arrow{color:#58a6ff}
-tbody tr{border-bottom:1px solid #21262d;transition:.1s}
-tbody tr:hover{background:#1c2128}
-td{padding:6px 10px;vertical-align:middle;text-align:right;white-space:nowrap}
-td:first-child{text-align:left;padding-left:20px;white-space:normal;word-break:break-word}
-td:last-child{text-align:center;padding-right:20px}
-/* Colored badges */
-.badge{display:inline-block;padding:1px 8px;border-radius:10px;font-size:10px;font-weight:600}
-.badge-ddr5{background:#0d3a1e;color:#3fb950}
-.badge-ddr4{background:#1c2e4a;color:#58a6ff}
-.badge-ddr3{background:#3d1c0d;color:#f0883e}
-.badge-ecc{background:#3d1c4a;color:#d2a8ff}
-.badge-so{background:#1c3d3d;color:#56d4dd}
-.badge-rgb{background:#4a1c3d;color:#ff7be5}
-.best-value{background:linear-gradient(135deg,#1a3a2a,#0d3a1e);padding:2px 8px;border-radius:4px;font-weight:700;color:#3fb950;font-size:11px}
-/* Price per GB emphasis */
-.ppgb{font-weight:700;font-size:13px;color:#f0f6fc}
-.ppgb-good{color:#3fb950}
-.ppgb-ok{color:#d29922}
-.ppgb-meh{color:#f0883e}
-.ppgb-bad{color:#f85149}
-/* Capacity */
-.cap{font-weight:600}
-/* Speed */
-.speed{color:#8b949e}
-/* Empty state */
-#empty{display:none;text-align:center;padding:60px 20px;color:#484f58}
-#empty.show{display:block}
-/* Made with love */
-#footer{text-align:center;padding:20px;color:#484f58;font-size:11px;border-top:1px solid #21262d;margin-top:20px}
-
-.hero{padding:28px 20px 18px;background:radial-gradient(circle at top left,rgba(88,166,255,.16),transparent 36%),#0f1117;border-bottom:1px solid #21262d}
-.hero h2{font-size:26px;line-height:1.2;margin-bottom:8px;color:#f0f6fc}
-.hero p{max-width:860px;color:#8b949e;font-size:14px;line-height:1.55}
-.hero .seo-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.hero .seo-links a{border:1px solid #30363d;background:#161b22;border-radius:999px;padding:5px 10px;font-size:12px;color:#c9d1d9}
-.hero .seo-links a:hover{border-color:#58a6ff;text-decoration:none;color:#58a6ff}
-.content-section{padding:24px 20px;max-width:1100px;margin:0 auto;color:#c9d1d9;line-height:1.65}
-.content-section h2{font-size:20px;margin:0 0 10px;color:#f0f6fc}
-.content-section h3{font-size:15px;margin:18px 0 6px;color:#e1e4e8}
-.content-section p,.content-section li{color:#8b949e;font-size:13px}
-.content-section ul{padding-left:20px;margin:8px 0 0}
-.faq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:12px}
-.faq-card{border:1px solid #21262d;background:#161b22;border-radius:10px;padding:14px}
-.faq-card h3{margin-top:0;color:#f0f6fc}
-
-/* ─── Pagination ─── */
-#pagination{display:flex;align-items:center;justify-content:center;gap:4px;padding:16px 20px;flex-wrap:wrap}
-#pagination .page-info{color:#8b949e;font-size:12px;margin:0 12px;white-space:nowrap}
-#pagination button{min-width:36px;height:36px;border:1px solid #30363d;border-radius:8px;background:#161b22;color:#c9d1d9;font-size:13px;font-weight:500;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;justify-content:center;padding:0 8px}
-#pagination button:hover:not(:disabled):not(.active){background:#21262d;border-color:#58a6ff;color:#58a6ff}
-#pagination button.active{background:#1f6feb;border-color:#1f6feb;color:#fff;font-weight:700;cursor:default}
-#pagination button:disabled{opacity:.3;cursor:not-allowed}
-#pagination button.nav-arrow{font-size:16px;font-weight:700;min-width:40px}
-#pagination .ellipsis{color:#484f58;font-size:14px;padding:0 4px;user-select:none}
-
-/* ─── Mobile ─── */
-@media(max-width:768px){
-  #header{padding:12px 14px;gap:8px}
-  #header h1{font-size:17px}
-  #header .tagline{display:none}
-  #header .stats{width:100%;margin-left:0;margin-top:4px;gap:12px}
-  #last-update{margin-left:0}
-  #filters{gap:8px;padding:10px 12px}
-  .filter-group{gap:4px}
-  .filter-group label{font-size:10px}
-  .filter-group select,.filter-group input{padding:6px 8px;font-size:13px;min-height:36px}
-  .search-wrap input{width:100%;min-width:0}
-  .search-wrap{flex:1;min-width:140px}
-  .btn{padding:6px 14px;font-size:13px;min-height:36px}
-  #table-wrap{padding:0}
-  thead th,td{padding:5px 8px;font-size:11px}
-  td:first-child{padding-left:12px}
-  thead th:first-child{padding-left:12px}
-  .hero{padding:20px 14px 14px}
-  .hero h2{font-size:20px}
-  .hero p{font-size:13px}
-  .hero .seo-links{gap:6px}
-  .hero .seo-links a{padding:4px 8px;font-size:11px}
-  .content-section{padding:20px 14px}
-  .faq-grid{grid-template-columns:1fr}
-  #pagination{gap:3px;padding:12px 10px}
-  #pagination button{min-width:34px;height:34px;font-size:12px}
-  #pagination button.nav-arrow{min-width:36px}
-  #pagination .page-info{font-size:11px;margin:0 6px;width:100%;text-align:center}
-}
-@media(max-width:500px){
-  /* Card layout for mobile */
-  table,thead,tbody,th,td,tr{display:block}
-  thead{display:none}
-  tbody tr{
-    background:#161b22;
-    border:1px solid #21262d;
-    border-radius:10px;
-    margin:8px 12px;
-    padding:0;
-    overflow:hidden;
-    transition:border-color .15s;
-  }
-  tbody tr:hover{border-color:#30363d}
-  /* Product title row */
-  td:first-child{
-    display:block;
-    text-align:left;
-    padding:12px 14px 6px;
-    font-weight:600;
-    font-size:13px;
-    line-height:1.4;
-    background:transparent;
-    border-radius:0;
-    margin-top:0;
-    color:#f0f6fc;
-    word-break:break-word;
-    white-space:normal;
-  }
-  /* Price + $/GB hero row */
-  td[data-label="$ / GB"]{
-    display:inline-block;
-    width:auto;
-    text-align:left;
-    padding:2px 14px 2px;
-    font-size:16px;
-    font-weight:800;
-    border:none;
-  }
-  td[data-label="$ / GB"]::before{display:none}
-  td[data-label="Price"]{
-    display:inline-block;
-    width:auto;
-    text-align:left;
-    padding:2px 6px 2px 0;
-    font-size:16px;
-    font-weight:700;
-    border:none;
-    color:#f0f6fc;
-  }
-  td[data-label="Price"]::before{display:none}
-  /* Specs row (capacity, speed, type) */
-  td[data-label="Capacity"],
-  td[data-label="Speed"]{
-    display:inline-block;
-    width:auto;
-    text-align:left;
-    padding:4px 6px 4px 14px;
-    font-size:12px;
-    border:none;
-  }
-  td[data-label="Capacity"]::before,
-  td[data-label="Speed"]::before{
-    content:attr(data-label) ": ";
-    color:#8b949e;
-    font-size:11px;
-    text-transform:uppercase;
-    letter-spacing:.3px;
-    margin-right:2px;
-  }
-  /* Type/Form/ECC/CL badges row */
-  td[data-label="Type"],
-  td[data-label="Form"],
-  td[data-label="ECC"],
-  td[data-label="CL"]{
-    display:inline-block;
-    width:auto;
-    text-align:left;
-    padding:4px 6px;
-    font-size:11px;
-    border:none;
-  }
-  td[data-label="Type"]::before,
-  td[data-label="Form"]::before,
-  td[data-label="ECC"]::before,
-  td[data-label="CL"]::before{
-    display:none;
-  }
-  /* Buy button */
-  td[data-label="Buy"]{
-    display:block;
-    text-align:center;
-    padding:10px 14px 14px;
-    border:none;
-    border-radius:0;
-    background:transparent;
-  }
-  td[data-label="Buy"]::before{display:none}
-  td[data-label="Buy"] a{
-    display:block;
-    background:#238636;
-    color:#fff;
-    padding:10px 20px;
-    border-radius:8px;
-    font-size:14px;
-    font-weight:600;
-    text-decoration:none;
-    text-align:center;
-    transition:background .15s;
-  }
-  td[data-label="Buy"] a:hover{background:#2ea043}
-  td[data-label="Buy"] a:active{background:#1a7f37}
-  td .badge{display:inline}
-
-  #header h1{font-size:15px}
-  .hero h2{font-size:18px}
-
-  /* Mobile pagination - bigger touch targets */
-  #pagination{gap:6px;padding:14px 10px 20px}
-  #pagination button{
-    min-width:40px;
-    height:40px;
-    font-size:14px;
-    border-radius:10px;
-    font-weight:600;
-  }
-  #pagination button.nav-arrow{min-width:44px;height:44px;font-size:18px}
-  #pagination button.active{
-    background:#1f6feb;
-    border-color:#1f6feb;
-    box-shadow:0 2px 8px rgba(31,111,235,.35);
-  }
-  #pagination .page-info{font-size:0;margin:6px 0 0;width:100%;text-align:center}
-  #pagination .page-info::after{content:"Page " attr(data-pages);font-size:12px;color:#8b949e}
-
-  /* Sticky filter bar scroll */
-  #filters{
-    overflow-x:auto;
-    flex-wrap:nowrap;
-    -webkit-overflow-scrolling:touch;
-    scrollbar-width:none;
-    gap:10px;
-    padding:10px 12px;
-  }
-  #filters::-webkit-scrollbar{display:none}
-  .filter-group{flex-shrink:0}
-}
-</style>
+<link rel="stylesheet" href="/vercel.css">
 </head>
 <body>
 
-<header id="header">
-  <div>
-    <h1>BuyCheapRAM <span class="tagline">— cheap RAM ranked by $/GB</span></h1>
-    <span id="last-update">Loading…</span>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">BuyCheapRAM</a>
+    <div class="nav-links" id="nav-links">
+      <a href="/" class="active">Price Comparison</a>
+      <a href="/buy-ram">Buy RAM</a>
+      <a href="/cheap-ram">Cheap RAM</a>
+      <a href="/ddr5-vs-ddr4">DDR5 vs DDR4</a>
+      <a href="/ram-buying-guide">Guide</a>
+      <a href="/about">About</a>
+    </div>
+    <button class="nav-hamburger" id="nav-toggle" aria-label="Toggle menu">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
   </div>
-  <div class="stats" aria-label="Current RAM deal statistics">
-    <span>Listings: <strong id="stat-count">0</strong></span>
-    <span>Best $/GB: <strong id="stat-best">—</strong></span>
+</nav>
+
+<section class="hero-band">
+  <span class="hero-mono-label">ram price comparison</span>
+  <h1>Find the cheapest RAM for your build.</h1>
+  <p class="hero-lead">Every listing sorted by price per GB. Filter by DDR type, capacity, speed, form factor, and ECC support. Data refreshed daily from Newegg.</p>
+  <div class="hero-cta-row">
+    <a href="#table-wrap" class="btn-primary">Compare Prices</a>
+    <a href="/ram-buying-guide" class="btn-secondary">RAM Buying Guide</a>
   </div>
-</header>
-<section class="hero" aria-labelledby="hero-title">
-  <h2 id="hero-title">Buy RAM — Find the Cheapest Memory Deals Instantly</h2>
-  <p>BuyCheapRAM helps you <strong>buy cheap RAM</strong> by comparing memory prices from Newegg. With RAM prices surging 3-4x due to the 2026 global chip shortage, finding good deals matters more than ever. Whether you need DDR5, DDR4, laptop SO-DIMM, desktop DIMM, or server ECC RAM — we sort every listing by <strong>price per GB</strong> so the best deals rise to the top. Compare RAM from Corsair, G.Skill, Kingston, Crucial, Samsung, and 100+ brands.</p>
+  <div class="stats-row">
+    <div class="stat-item">
+      <div class="stat-value" id="stat-count-hero">—</div>
+      <div class="stat-label">Listings</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value" id="stat-best-hero">—</div>
+      <div class="stat-label">Best $/GB</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value" id="stat-update-hero">—</div>
+      <div class="stat-label">Last Update</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:var(--space-2xl);padding-bottom:var(--space-2xl)">
   <nav class="seo-links" aria-label="Popular RAM searches">
     <a href="/buy-ram">Buy RAM</a>
     <a href="/cheap-ram">Cheap RAM</a>
@@ -747,8 +508,7 @@ td:last-child{text-align:center;padding-right:20px}
   </nav>
 </section>
 
-<main>
-<div id="filters" aria-label="RAM deal filters">
+<div class="filter-bar" id="filters" aria-label="RAM deal filters">
   <div class="filter-group">
     <label>Type</label>
     <select id="filter-ddr">
@@ -800,18 +560,18 @@ td:last-child{text-align:center;padding-right:20px}
       <option value="128">128+</option>
     </select>
   </div>
-  <div class="filter-group search-wrap">
+  <div class="filter-group">
     <input type="text" id="filter-search" placeholder="Search…">
   </div>
   <div class="filter-group">
-    <button class="btn active" id="sort-ppgb" data-sort="ppgb">$/GB</button>
-    <button class="btn" id="sort-price" data-sort="price">Price</button>
-    <button class="btn" id="sort-speed" data-sort="speed">Speed</button>
+    <button class="filter-btn active" id="sort-ppgb" data-sort="ppgb">$/GB</button>
+    <button class="filter-btn" id="sort-price" data-sort="price">Price</button>
+    <button class="filter-btn" id="sort-speed" data-sort="speed">Speed</button>
   </div>
 </div>
 
-<section id="table-wrap" aria-label="RAM price comparison table">
-  <p style="text-align:center;color:#484f58;font-size:11px;margin-bottom:10px">Some links may be affiliate links. We may earn a commission at no extra cost to you. <a href="/affiliate-disclosure.html" style="color:#58a6ff">Learn more</a></p>
+<section class="table-wrap" id="table-wrap" aria-label="RAM price comparison table">
+  <p class="affiliate-notice">Some links may be affiliate links. We may earn a commission at no extra cost to you. <a href="/affiliate-disclosure">Learn more</a></p>
   <table>
     <thead>
       <tr>
@@ -842,27 +602,41 @@ td:last-child{text-align:center;padding-right:20px}
   </table>
 </section>
 
-<div id="pagination" aria-label="Pagination"></div>
+<div class="pagination" id="pagination" aria-label="Pagination"></div>
 
-<div id="empty" class="show">
-  <p style="font-size:24px;margin-bottom:12px">🔍</p>
+<div class="empty-state" id="empty">
+  <p>🔍</p>
   <p>No results match your filters.</p>
-  <p style="color:#484f58;font-size:12px;margin-top:4px">Try adjusting the criteria above.</p>
+  <p class="empty-hint">Try adjusting the criteria above.</p>
 </div>
 
-<section class="content-section" aria-labelledby="guide-title">
-  <h2 id="guide-title">How to buy cheap RAM the smart way</h2>
-  <p>The cheapest memory kit is not always the best upgrade. Start with price per GB, then check compatibility: DDR5 vs DDR4, desktop DIMM vs laptop SO-DIMM, maximum supported capacity, speed support, and whether your workstation or server needs ECC RAM.</p>
-  <ul>
-    <li><strong>Gaming PCs:</strong> DDR5 6000 CL30/CL32 is often the sweet spot for modern AMD and Intel builds.</li>
-    <li><strong>Budget upgrades:</strong> DDR4 3200 or 3600 kits can still be excellent value for older desktops.</li>
-    <li><strong>Laptops:</strong> filter for SO-DIMM and match your laptop's supported DDR generation.</li>
-    <li><strong>Servers/workstations:</strong> check ECC, RDIMM/UDIMM support, and motherboard compatibility before buying.</li>
-  </ul>
+<section class="section" style="padding-top:var(--space-3xl)">
+  <div class="section-eyebrow">guide</div>
+  <h2>How to buy cheap RAM the smart way.</h2>
+  <p class="lead">The cheapest memory kit is not always the best upgrade. Start with price per GB, then check compatibility.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--space-md);margin-top:var(--space-lg)">
+    <div class="card">
+      <h3 style="font-size:15px;font-weight:600;margin-bottom:var(--space-xs)">Gaming PCs</h3>
+      <p style="font-size:14px;color:var(--color-body)">DDR5 6000 CL30/CL32 is often the sweet spot for modern AMD and Intel builds.</p>
+    </div>
+    <div class="card">
+      <h3 style="font-size:15px;font-weight:600;margin-bottom:var(--space-xs)">Budget Upgrades</h3>
+      <p style="font-size:14px;color:var(--color-body)">DDR4 3200 or 3600 kits can still be excellent value for older desktops.</p>
+    </div>
+    <div class="card">
+      <h3 style="font-size:15px;font-weight:600;margin-bottom:var(--space-xs)">Laptops</h3>
+      <p style="font-size:14px;color:var(--color-body)">Filter for SO-DIMM and match your laptop's supported DDR generation.</p>
+    </div>
+    <div class="card">
+      <h3 style="font-size:15px;font-weight:600;margin-bottom:var(--space-xs)">Servers & Workstations</h3>
+      <p style="font-size:14px;color:var(--color-body)">Check ECC, RDIMM/UDIMM support, and motherboard compatibility before buying.</p>
+    </div>
+  </div>
 </section>
 
-<section class="content-section" aria-labelledby="faq-title">
-  <h2 id="faq-title">BuyCheapRAM FAQ</h2>
+<section class="section">
+  <div class="section-eyebrow">faq</div>
+  <h2>Frequently asked questions.</h2>
   <div class="faq-grid">
     <article class="faq-card">
       <h3>How are RAM deals ranked?</h3>
@@ -878,84 +652,104 @@ td:last-child{text-align:center;padding-right:20px}
     </article>
     <article class="faq-card">
       <h3>Why are RAM prices so high in 2026?</h3>
-      <p>A global shortage of DRAM chips has driven prices up 3-4x since early 2025. AI data centers, smartphone makers, and PC builders are all competing for limited supply. BuyCheapRAM helps you find the best available deals during the shortage.</p>
+      <p>A global shortage of DRAM chips has driven prices up 3-4x since early 2025. BuyCheapRAM helps you find the best available deals.</p>
     </article>
     <article class="faq-card">
-      <h3>Is DDR5 worth the extra cost over DDR4?</h3>
-      <p>DDR5 offers 50-100% more bandwidth, benefiting content creation and AI workloads. For budget builds, DDR4 still offers excellent value. Use our DDR5 vs DDR4 comparison to see the price difference.</p>
+      <h3>Is DDR5 worth the extra cost?</h3>
+      <p>DDR5 offers 50-100% more bandwidth, benefiting content creation and AI workloads. For budget builds, DDR4 still offers excellent value.</p>
     </article>
     <article class="faq-card">
-      <h3>What is a good price per GB for RAM?</h3>
-      <p>In 2026's shortage market, under $3/GB for DDR4 and under $6/GB for DDR5 is a good deal. Before the shortage, these were closer to $1/GB and $2/GB.</p>
+      <h3>What is a good price per GB?</h3>
+      <p>In 2026's shortage market, under $3/GB for DDR4 and under $6/GB for DDR5 is a good deal.</p>
     </article>
     <article class="faq-card">
       <h3>Can I use laptop RAM in a desktop?</h3>
-      <p>No. Laptop RAM (SO-DIMM) and desktop RAM (DIMM) have different physical sizes. BuyCheapRAM labels each listing by form factor so you can filter for the right type.</p>
+      <p>No. Laptop RAM (SO-DIMM) and desktop RAM (DIMM) have different physical sizes. BuyCheapRAM labels each listing by form factor.</p>
     </article>
     <article class="faq-card">
       <h3>How often are prices updated?</h3>
-      <p>BuyCheapRAM scrapes Newegg's full RAM catalog regularly. Each listing shows the last update time. During volatile pricing, check back frequently as deals change daily.</p>
+      <p>BuyCheapRAM scrapes Newegg's full RAM catalog regularly. During volatile pricing, check back frequently as deals change daily.</p>
     </article>
     <article class="faq-card">
-      <h3>What is the best website to buy RAM?</h3>
-      <p>BuyCheapRAM is a free RAM price comparison tool that ranks memory by price per GB. We aggregate listings so you can find the cheapest RAM without visiting multiple retailer pages.</p>
-    </article>
-    <article class="faq-card">
-      <h3>How do I buy cheap RAM for my PC?</h3>
-      <p>Check your motherboard's supported DDR type and max capacity, then use BuyCheapRAM to sort by $/GB. Filter for your form factor (DIMM or SO-DIMM) and look for trusted brands like Corsair, Kingston, or Crucial.</p>
-    </article>
-    <article class="faq-card">
-      <h3>Is RAM the same as memory?</h3>
-      <p>Yes. RAM (Random Access Memory) and memory are the same thing. When people say "buy memory" or "buy RAM" for a PC, they mean the same component. BuyCheapRAM compares RAM/memory prices by $/GB.</p>
-    </article>
-    <article class="faq-card">
-      <h3>What RAM should I buy for gaming?</h3>
-      <p>For gaming in 2026, 32GB DDR5 6000MHz CL30-CL32 offers the best value. On a budget, 16GB DDR4 3200MHz still works well. Use BuyCheapRAM to compare gaming RAM deals sorted by price per GB.</p>
+      <h3>What RAM for gaming in 2026?</h3>
+      <p>32GB DDR5 6000MHz CL30-CL32 offers the best value. On a budget, 16GB DDR4 3200MHz still works well for most games.</p>
     </article>
   </div>
 </section>
-</main>
 
-<section class="content-section" aria-labelledby="guides-title" style="border-top:1px solid #21262d;padding-bottom:8px">
-  <h2 id="guides-title">RAM Buying Guides & Resources</h2>
-  <p style="color:#8b949e;font-size:13px;margin:6px 0 14px">Everything you need to know about buying RAM. Whether you want to <a href="/buy-ram">buy RAM</a>, find <a href="/cheap-ram">cheap RAM deals</a>, or learn how to choose the right memory — we've got you covered.</p>
-  <nav style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px" aria-label="RAM guides">
-    <a href="/buy-ram" style="border:1px solid #30363d;background:#161b22;border-radius:8px;padding:10px 16px;font-size:13px;color:#c9d1d9">🛒 Buy RAM</a>
-    <a href="/cheap-ram" style="border:1px solid #30363d;background:#161b22;border-radius:8px;padding:10px 16px;font-size:13px;color:#c9d1d9">💰 Cheap RAM Deals</a>
-    <a href="/ram-buying-guide" style="border:1px solid #30363d;background:#161b22;border-radius:8px;padding:10px 16px;font-size:13px;color:#c9d1d9">📖 RAM Buying Guide</a>
-    <a href="/best-ddr5-ram-2026" style="border:1px solid #30363d;background:#161b22;border-radius:8px;padding:10px 16px;font-size:13px;color:#c9d1d9">⚡ Best DDR5 RAM 2026</a>
-    <a href="/cheap-ddr4-ram-deals" style="border:1px solid #30363d;background:#161b22;border-radius:8px;padding:10px 16px;font-size:13px;color:#c9d1d9">🏷️ Cheap DDR4 Deals</a>
-    <a href="/ddr5-vs-ddr4" style="border:1px solid #30363d;background:#161b22;border-radius:8px;padding:10px 16px;font-size:13px;color:#c9d1d9">⚔️ DDR5 vs DDR4</a>
-    <a href="/laptop-ram-upgrade-guide" style="border:1px solid #30363d;background:#161b22;border-radius:8px;padding:10px 16px;font-size:13px;color:#c9d1d9">💻 Laptop RAM Guide</a>
-    <a href="/server-ecc-ram-guide" style="border:1px solid #30363d;background:#161b22;border-radius:8px;padding:10px 16px;font-size:13px;color:#c9d1d9">🖥️ Server & ECC RAM Guide</a>
-    <a href="/about" style="border:1px solid #30363d;background:#161b22;border-radius:8px;padding:10px 16px;font-size:13px;color:#c9d1d9">ℹ️ About BuyCheapRAM</a>
-  </nav>
+<section class="section" style="padding-top:0">
+  <div class="section-eyebrow">resources</div>
+  <h2>RAM buying guides & resources.</h2>
+  <div class="guide-grid">
+    <a href="/buy-ram" class="guide-card"><span class="guide-emoji">🛒</span> Buy RAM</a>
+    <a href="/cheap-ram" class="guide-card"><span class="guide-emoji">💰</span> Cheap RAM Deals</a>
+    <a href="/ram-buying-guide" class="guide-card"><span class="guide-emoji">📖</span> RAM Buying Guide</a>
+    <a href="/best-ddr5-ram-2026" class="guide-card"><span class="guide-emoji">⚡</span> Best DDR5 RAM 2026</a>
+    <a href="/cheap-ddr4-ram-deals" class="guide-card"><span class="guide-emoji">🏷️</span> Cheap DDR4 Deals</a>
+    <a href="/ddr5-vs-ddr4" class="guide-card"><span class="guide-emoji">⚔️</span> DDR5 vs DDR4</a>
+    <a href="/laptop-ram-upgrade-guide" class="guide-card"><span class="guide-emoji">💻</span> Laptop RAM Guide</a>
+    <a href="/server-ecc-ram-guide" class="guide-card"><span class="guide-emoji">🖥️</span> Server & ECC RAM</a>
+    <a href="/about" class="guide-card"><span class="guide-emoji">ℹ️</span> About BuyCheapRAM</a>
+  </div>
 </section>
 
-<footer id="footer">
-  <p>BuyCheapRAM compares RAM prices from retailer data feeds. Data updated daily where available. Prices may vary. Some links may be affiliate links.</p>
-  <nav style="margin-top:8px">
-    <a href="/about" style="color:#58a6ff;margin:0 8px;font-size:11px">About</a>
-    <a href="/privacy-policy" style="color:#58a6ff;margin:0 8px;font-size:11px">Privacy Policy</a>
-    <a href="/terms-of-service" style="color:#58a6ff;margin:0 8px;font-size:11px">Terms of Service</a>
-    <a href="/affiliate-disclosure" style="color:#58a6ff;margin:0 8px;font-size:11px">Affiliate Disclosure</a>
-    <a href="/disclaimer" style="color:#58a6ff;margin:0 8px;font-size:11px">Disclaimer</a>
-  </nav>
-  <p style="margin-top:6px">&copy; 2026 BuyCheapRAM. All rights reserved.</p>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-columns">
+      <div class="footer-col">
+        <div class="footer-col-label">Compare</div>
+        <a href="/">RAM Price Comparison</a>
+        <a href="/ddr5-vs-ddr4">DDR5 vs DDR4</a>
+        <a href="/best-ddr5-ram-2026">Best DDR5 RAM</a>
+        <a href="/cheap-ddr4-ram-deals">Cheap DDR4 Deals</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-label">Guides</div>
+        <a href="/buy-ram">Buy RAM</a>
+        <a href="/cheap-ram">Cheap RAM</a>
+        <a href="/ram-buying-guide">RAM Buying Guide</a>
+        <a href="/laptop-ram-upgrade-guide">Laptop RAM</a>
+        <a href="/server-ecc-ram-guide">Server ECC RAM</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-label">Brands</div>
+        <a href="/corsair-ram">Corsair RAM</a>
+        <a href="/gskill-ram">G.Skill RAM</a>
+        <a href="/kingston-ram">Kingston RAM</a>
+        <a href="/crucial-ram">Crucial RAM</a>
+        <a href="/samsung-ram">Samsung RAM</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-label">Capacity</div>
+        <a href="/16gb-ram">16GB RAM</a>
+        <a href="/32gb-ram">32GB RAM</a>
+        <a href="/64gb-ram">64GB RAM</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 BuyCheapRAM. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="/about">About</a>
+        <a href="/privacy-policy">Privacy</a>
+        <a href="/terms-of-service">Terms</a>
+        <a href="/affiliate-disclosure">Affiliate Disclosure</a>
+        <a href="/disclaimer">Disclaimer</a>
+      </div>
+    </div>
+  </div>
 </footer>
 
-<!-- Cookie Consent Banner -->
-<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#161b22;border-top:1px solid #30363d;padding:16px 24px;z-index:9999;font-size:13px;color:#c9d1d9;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
-  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
-    <span>We use cookies for analytics to improve BuyCheapRAM. No personal data is sold. By continuing, you agree to our <a href="/privacy-policy.html" style="color:#58a6ff">Privacy Policy</a>.</span>
-    <div style="display:flex;gap:8px">
-      <button onclick="acceptCookies()" style="background:#238636;color:#fff;border:none;padding:8px 20px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600">Accept</button>
-      <button onclick="declineCookies()" style="background:#21262d;color:#c9d1d9;border:1px solid #30363d;padding:8px 20px;border-radius:6px;cursor:pointer;font-size:13px">Decline</button>
+<div class="cookie-banner" id="cookie-banner">
+  <div class="cookie-inner">
+    <span>We use cookies for analytics to improve BuyCheapRAM. No personal data is sold. By continuing, you agree to our <a href="/privacy-policy">Privacy Policy</a>.</span>
+    <div class="cookie-actions">
+      <button class="cookie-accept" onclick="acceptCookies()">Accept</button>
+      <button class="cookie-decline" onclick="declineCookies()">Decline</button>
     </div>
   </div>
 </div>
+
 <script>
-// Cookie consent
 (function(){
   var consent = localStorage.getItem('cookie_consent');
   if(!consent) document.getElementById('cookie-banner').style.display='block';
@@ -968,6 +762,9 @@ function declineCookies(){
   localStorage.setItem('cookie_consent','declined');
   document.getElementById('cookie-banner').style.display='none';
 }
+document.getElementById('nav-toggle').addEventListener('click', function(){
+  document.getElementById('nav-links').classList.toggle('open');
+});
 </script>
 
 <script>
@@ -1314,5 +1111,24 @@ document.querySelector('thead th[data-col="ppgb"]').classList.add('sort-asc');
 
 loadData();
 </script>
+
+<script>
+var origRender = render;
+render = function() {
+  origRender();
+  var filtered = filterProducts();
+  var sorted = sortProducts(filtered, currentSort.col, currentSort.dir);
+  var countEl = document.getElementById('stat-count-hero');
+  var bestEl = document.getElementById('stat-best-hero');
+  var updateEl = document.getElementById('stat-update-hero');
+  if (countEl) countEl.textContent = sorted.length;
+  if (bestEl && sorted.length > 0) bestEl.textContent = formatUSD(sorted[0].price_per_gb) + '/GB';
+  if (updateEl) {
+    var lu = document.getElementById('last-update');
+    if (lu) updateEl.textContent = lu.textContent.replace('Updated ','');
+  }
+};
+</script>
+
 </body>
 </html>
