@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280" fill="none">
+  <rect width="800" height="280" fill="#0f1117"/>
+  <text x="400" y="30" text-anchor="middle" fill="#f0f6fc" font-family="system-ui" font-size="18" font-weight="700">Best DDR5 RAM in 2026 — Our Top Picks</text>
+  
+  <!-- Winner badge -->
+  <rect x="40" y="55" width="220" height="200" rx="10" fill="#161b22" stroke="#3fb950" stroke-width="2"/>
+  <rect x="40" y="55" width="220" height="30" rx="10" fill="#238636" opacity="0.3"/>
+  <text x="150" y="76" text-anchor="middle" fill="#3fb950" font-family="system-ui" font-size="12" font-weight="700">🥇 BEST OVERALL</text>
+  <text x="150" y="110" text-anchor="middle" fill="#f0f6fc" font-family="system-ui" font-size="14" font-weight="700">G.Skill Trident Z5</text>
+  <text x="150" y="130" text-anchor="middle" fill="#8b949e" font-family="system-ui" font-size="11">DDR5-6000 CL30</text>
+  <text x="150" y="155" text-anchor="middle" fill="#3fb950" font-family="system-ui" font-size="20" font-weight="800">$89</text>
+  <text x="150" y="172" text-anchor="middle" fill="#8b949e" font-family="system-ui" font-size="10">32GB (2×16GB)</text>
+  <text x="150" y="200" text-anchor="middle" fill="#8b949e" font-family="system-ui" font-size="10">Excellent XMP stability</text>
+  <text x="150" y="215" text-anchor="middle" fill="#8b949e" font-family="system-ui" font-size="10">Best timings for the price</text>
+  
+  <!-- Budget pick -->
+  <rect x="290" y="55" width="220" height="200" rx="10" fill="#161b22" stroke="#58a6ff" stroke-width="2"/>
+  <rect x="290" y="55" width="220" height="30" rx="10" fill="#1f6feb" opacity="0.2"/>
+  <text x="400" y="76" text-anchor="middle" fill="#58a6ff" font-family="system-ui" font-size="12" font-weight="700">🥈 BEST BUDGET</text>
+  <text x="400" y="110" text-anchor="middle" fill="#f0f6fc" font-family="system-ui" font-size="14" font-weight="700">Kingston Fury Beast</text>
+  <text x="400" y="130" text-anchor="middle" fill="#8b949e" font-family="system-ui" font-size="11">DDR5-5600 CL36</text>
+  <text x="400" y="155" text-anchor="middle" fill="#58a6ff" font-family="system-ui" font-size="20" font-weight="800">$62</text>
+  <text x="400" y="172" text-anchor="middle" fill="#8b949e" font-family="system-ui" font-size="10">32GB (2×16GB)</text>
+  <text x="400" y="200" text-anchor="middle" fill="#8b949e" font-family="system-ui" font-size="10">Reliable JEDEC specs</text>
+  <text x="400" y="215" text-anchor="middle" fill="#8b949e" font-family="system-ui" font-size="10">No-frills performance</text>
+  
+  <!-- Premium pick -->
+  <rect x="540" y="55" width="220" height="200" rx="10" fill="#161b22" stroke="#bc8cff" stroke-width="2"/>
+  <rect x="540" y="55" width="220" height="30" rx="10" fill="#8957e5" opacity="0.2"/>
+  <text x="650" y="76" text-anchor="middle" fill="#bc8cff" font-family="system-ui" font-size="12" font-weight="700">🥉 BEST PREMIUM</text>
+  <text x="650" y="110" text-anchor="middle" fill="#f0f6fc" font-family="system-ui" font-size="14" font-weight="700">Corsair Dominator</text>
+  <text x="650" y="130" text-anchor="middle" fill="#8b949e" font-family="system-ui" font-size="11">DDR5-7200 CL34</text>
+  <text x="650" y="155" text-anchor="middle" fill="#bc8cff" font-family="system-ui" font-size="20" font-weight="800">$145</text>
+  <text x="650" y="172" text-anchor="middle" fill="#8b949e" font-family="system-ui" font-size="10">32GB (2×16GB)</text>
+  <text x="650" y="200" text-anchor="middle" fill="#8b949e" font-family="system-ui" font-size="10">RGB lighting</text>
+  <text x="650" y="215" text-anchor="middle" fill="#8b949e" font-family="system-ui" font-size="10">Max overclocking headroom</text>
+</svg>

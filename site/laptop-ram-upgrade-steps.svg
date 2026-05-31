@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" fill="none">
+  <rect width="800" height="300" fill="#0f1117"/>
+  <text x="400" y="35" text-anchor="middle" fill="#f0f6fc" font-family="system-ui" font-size="20" font-weight="700">Laptop RAM Upgrade — 4 Simple Steps</text>
+  
+  <!-- Laptop outline -->
+  <rect x="280" y="55" width="240" height="150" rx="8" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+  <rect x="290" y="65" width="220" height="130" rx="4" fill="#0d1117"/>
+  <text x="400" y="135" text-anchor="middle" fill="#58a6ff" font-family="system-ui" font-size="14">SO-DIMM Slot</text>
+  <rect x="300" y="205" width="220" height="8" rx="4" fill="#30363d"/>
+  
+  <!-- Steps -->
+  <rect x="40" y="230" width="160" height="50" rx="8" fill="#161b22" stroke="#58a6ff"/>
+  <text x="120" y="250" text-anchor="middle" fill="#58a6ff" font-family="system-ui" font-size="11" font-weight="700">1. Check Specs</text>
+  <text x="120" y="268" text-anchor="middle" fill="#8b949e" font-family="system-ui" font-size="9">DDR type & max GB</text>
+  
+  <rect x="230" y="230" width="160" height="50" rx="8" fill="#161b22" stroke="#3fb950"/>
+  <text x="310" y="250" text-anchor="middle" fill="#3fb950" font-family="system-ui" font-size="11" font-weight="700">2. Buy SO-DIMM</text>
+  <text x="310" y="268" text-anchor="middle" fill="#8b949e" font-family="system-ui" font-size="9">Match DDR & speed</text>
+  
+  <rect x="420" y="230" width="160" height="50" rx="8" fill="#161b22" stroke="#d29922"/>
+  <text x="500" y="250" text-anchor="middle" fill="#d29922" font-family="system-ui" font-size="11" font-weight="700">3. Install</text>
+  <text x="500" y="268" text-anchor="middle" fill="#8b949e" font-family="system-ui" font-size="9">45° angle, press down</text>
+  
+  <rect x="610" y="230" width="160" height="50" rx="8" fill="#161b22" stroke="#bc8cff"/>
+  <text x="690" y="250" text-anchor="middle" fill="#bc8cff" font-family="system-ui" font-size="11" font-weight="700">4. Verify</text>
+  <text x="690" y="268" text-anchor="middle" fill="#8b949e" font-family="system-ui" font-size="9">Check BIOS/Task Mgr</text>
+</svg>

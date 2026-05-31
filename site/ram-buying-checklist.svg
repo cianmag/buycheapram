@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" fill="none">
+  <rect width="800" height="400" fill="#0f1117"/>
+  <text x="400" y="35" text-anchor="middle" fill="#f0f6fc" font-family="system-ui" font-size="20" font-weight="700">RAM Buying Checklist</text>
+  
+  <!-- Step 1 -->
+  <circle cx="80" cy="85" r="20" fill="#1f6feb" opacity="0.2"/>
+  <text x="80" y="90" text-anchor="middle" fill="#58a6ff" font-family="system-ui" font-size="16" font-weight="700">1</text>
+  <text x="120" y="80" fill="#f0f6fc" font-family="system-ui" font-size="15" font-weight="600">Check DDR Type</text>
+  <text x="120" y="100" fill="#8b949e" font-family="system-ui" font-size="12">DDR5 or DDR4? Your motherboard decides.</text>
+  
+  <!-- Step 2 -->
+  <circle cx="80" cy="145" r="20" fill="#1f6feb" opacity="0.2"/>
+  <text x="80" y="150" text-anchor="middle" fill="#58a6ff" font-family="system-ui" font-size="16" font-weight="700">2</text>
+  <text x="120" y="140" fill="#f0f6fc" font-family="system-ui" font-size="15" font-weight="600">Choose Capacity</text>
+  <text x="120" y="160" fill="#8b949e" font-family="system-ui" font-size="12">32GB sweet spot for gaming. 16GB for budget. 64GB+ for workstations.</text>
+  
+  <!-- Step 3 -->
+  <circle cx="80" cy="205" r="20" fill="#1f6feb" opacity="0.2"/>
+  <text x="80" y="210" text-anchor="middle" fill="#58a6ff" font-family="system-ui" font-size="16" font-weight="700">3</text>
+  <text x="120" y="200" fill="#f0f6fc" font-family="system-ui" font-size="15" font-weight="600">Pick Speed & Latency</text>
+  <text x="120" y="220" fill="#8b949e" font-family="system-ui" font-size="12">Higher MHz = more bandwidth. Lower CL = less latency. Balance both.</text>
+  
+  <!-- Step 4 -->
+  <circle cx="80" cy="265" r="20" fill="#1f6feb" opacity="0.2"/>
+  <text x="80" y="270" text-anchor="middle" fill="#58a6ff" font-family="system-ui" font-size="16" font-weight="700">4</text>
+  <text x="120" y="260" fill="#f0f6fc" font-family="system-ui" font-size="15" font-weight="600">Select Form Factor</text>
+  <text x="120" y="280" fill="#8b949e" font-family="system-ui" font-size="12">DIMM for desktop. SO-DIMM for laptop. RDIMM for servers.</text>
+  
+  <!-- Step 5 -->
+  <circle cx="80" cy="325" r="20" fill="#238636" opacity="0.3"/>
+  <text x="80" y="330" text-anchor="middle" fill="#3fb950" font-family="system-ui" font-size="16" font-weight="700">5</text>
+  <text x="120" y="320" fill="#f0f6fc" font-family="system-ui" font-size="15" font-weight="600">Compare by $/GB</text>
+  <text x="120" y="340" fill="#8b949e" font-family="system-ui" font-size="12">Sort by price per GB on BuyCheapRAM to find the best value deals.</text>
+  
+  <!-- Price badge -->
+  <rect x="550" y="65" width="200" height="80" rx="10" fill="#161b22" stroke="#3fb950" stroke-width="2"/>
+  <text x="650" y="95" text-anchor="middle" fill="#3fb950" font-family="system-ui" font-size="28" font-weight="800">$/GB</text>
+  <text x="650" y="120" text-anchor="middle" fill="#8b949e" font-family="system-ui" font-size="11">The #1 metric for value</text>
+</svg>

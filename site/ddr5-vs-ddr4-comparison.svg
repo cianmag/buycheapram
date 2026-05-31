@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" fill="none">
+  <rect width="800" height="350" fill="#0f1117"/>
+  <text x="400" y="35" text-anchor="middle" fill="#f0f6fc" font-family="system-ui" font-size="20" font-weight="700">DDR5 vs DDR4 — Key Differences</text>
+  
+  <!-- DDR5 Column -->
+  <rect x="40" y="55" width="340" height="270" rx="10" fill="#161b22" stroke="#3fb950" stroke-width="2"/>
+  <text x="210" y="85" text-anchor="middle" fill="#3fb950" font-family="system-ui" font-size="18" font-weight="700">DDR5</text>
+  <text x="210" y="105" text-anchor="middle" fill="#8b949e" font-family="system-ui" font-size="12">Next Generation</text>
+  
+  <text x="70" y="140" fill="#e1e4e8" font-family="system-ui" font-size="13">Speed: <tspan fill="#3fb950" font-weight="700">4800–8000+ MHz</tspan></text>
+  <text x="70" y="165" fill="#e1e4e8" font-family="system-ui" font-size="13">Voltage: <tspan fill="#3fb950" font-weight="700">1.1V</tspan></text>
+  <text x="70" y="190" fill="#e1e4e8" font-family="system-ui" font-size="13">Bandwidth: <tspan fill="#3fb950" font-weight="700">Up to 2x DDR4</tspan></text>
+  <text x="70" y="215" fill="#e1e4e8" font-family="system-ui" font-size="13">Banks: <tspan fill="#3fb950" font-weight="700">32 (2x DDR4)</tspan></text>
+  <text x="70" y="240" fill="#e1e4e8" font-family="system-ui" font-size="13">Price/GB: <tspan fill="#d29922" font-weight="700">~$6/GB</tspan></text>
+  <text x="70" y="265" fill="#e1e4e8" font-family="system-ui" font-size="13">Best for: <tspan fill="#f0f6fc" font-weight="700">New builds, gaming</tspan></text>
+  
+  <!-- DDR4 Column -->
+  <rect x="420" y="55" width="340" height="270" rx="10" fill="#161b22" stroke="#58a6ff" stroke-width="2"/>
+  <text x="590" y="85" text-anchor="middle" fill="#58a6ff" font-family="system-ui" font-size="18" font-weight="700">DDR4</text>
+  <text x="590" y="105" text-anchor="middle" fill="#8b949e" font-family="system-ui" font-size="12">Mature & Affordable</text>
+  
+  <text x="450" y="140" fill="#e1e4e8" font-family="system-ui" font-size="13">Speed: <tspan fill="#58a6ff" font-weight="700">2133–4000 MHz</tspan></text>
+  <text x="450" y="165" fill="#e1e4e8" font-family="system-ui" font-size="13">Voltage: <tspan fill="#58a6ff" font-weight="700">1.2V</tspan></text>
+  <text x="450" y="190" fill="#e1e4e8" font-family="system-ui" font-size="13">Bandwidth: <tspan fill="#58a6ff" font-weight="700">Baseline</tspan></text>
+  <text x="450" y="215" fill="#e1e4e8" font-family="system-ui" font-size="13">Banks: <tspan fill="#58a6ff" font-weight="700">16</tspan></text>
+  <text x="450" y="240" fill="#e1e4e8" font-family="system-ui" font-size="13">Price/GB: <tspan fill="#3fb950" font-weight="700">~$2/GB</tspan></text>
+  <text x="450" y="265" fill="#e1e4e8" font-family="system-ui" font-size="13">Best for: <tspan fill="#f0f6fc" font-weight="700">Budget builds, older PCs</tspan></text>
+</svg>

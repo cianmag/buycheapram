@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" fill="none">
+  <rect width="800" height="300" fill="#0f1117"/>
+  <text x="400" y="35" text-anchor="middle" fill="#f0f6fc" font-family="system-ui" font-size="20" font-weight="700">RAM Form Factor Comparison</text>
+  
+  <!-- DIMM -->
+  <rect x="60" y="70" width="180" height="180" rx="8" fill="#161b22" stroke="#58a6ff" stroke-width="2"/>
+  <text x="150" y="100" text-anchor="middle" fill="#58a6ff" font-family="system-ui" font-size="16" font-weight="700">DIMM</text>
+  <text x="150" y="120" text-anchor="middle" fill="#8b949e" font-family="system-ui" font-size="11">Desktop PCs</text>
+  <rect x="80" y="135" width="140" height="90" rx="4" fill="#1c2128" stroke="#30363d"/>
+  <rect x="90" y="145" width="50" height="12" rx="2" fill="#58a6ff" opacity="0.3"/>
+  <rect x="90" y="163" width="50" height="12" rx="2" fill="#58a6ff" opacity="0.3"/>
+  <rect x="90" y="181" width="50" height="12" rx="2" fill="#58a6ff" opacity="0.3"/>
+  <rect x="90" y="199" width="50" height="12" rx="2" fill="#58a6ff" opacity="0.3"/>
+  <text x="150" y="240" text-anchor="middle" fill="#8b949e" font-family="system-ui" font-size="10">133.35mm × 30mm</text>
+  
+  <!-- SO-DIMM -->
+  <rect x="310" y="70" width="180" height="180" rx="8" fill="#161b22" stroke="#3fb950" stroke-width="2"/>
+  <text x="400" y="100" text-anchor="middle" fill="#3fb950" font-family="system-ui" font-size="16" font-weight="700">SO-DIMM</text>
+  <text x="400" y="120" text-anchor="middle" fill="#8b949e" font-family="system-ui" font-size="11">Laptops</text>
+  <rect x="330" y="145" width="140" height="60" rx="4" fill="#1c2128" stroke="#30363d"/>
+  <rect x="340" y="155" width="50" height="12" rx="2" fill="#3fb950" opacity="0.3"/>
+  <rect x="340" y="173" width="50" height="12" rx="2" fill="#3fb950" opacity="0.3"/>
+  <text x="400" y="240" text-anchor="middle" fill="#8b949e" font-family="system-ui" font-size="10">67.6mm × 30mm</text>
+  
+  <!-- RDIMM -->
+  <rect x="560" y="70" width="180" height="180" rx="8" fill="#161b22" stroke="#bc8cff" stroke-width="2"/>
+  <text x="650" y="100" text-anchor="middle" fill="#bc8cff" font-family="system-ui" font-size="16" font-weight="700">RDIMM</text>
+  <text x="650" y="120" text-anchor="middle" fill="#8b949e" font-family="system-ui" font-size="11">Servers</text>
+  <rect x="580" y="135" width="140" height="90" rx="4" fill="#1c2128" stroke="#30363d"/>
+  <rect x="585" y="140" width="130" height="8" rx="2" fill="#bc8cff" opacity="0.2"/>
+  <rect x="590" y="155" width="50" height="12" rx="2" fill="#bc8cff" opacity="0.3"/>
+  <rect x="590" y="173" width="50" height="12" rx="2" fill="#bc8cff" opacity="0.3"/>
+  <rect x="590" y="191" width="50" height="12" rx="2" fill="#bc8cff" opacity="0.3"/>
+  <text x="650" y="240" text-anchor="middle" fill="#8b949e" font-family="system-ui" font-size="10">133.35mm × 30mm + ECC</text>
+</svg>
